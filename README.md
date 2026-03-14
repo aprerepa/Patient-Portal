@@ -4,10 +4,10 @@ A role-based healthcare portal UI built with React and React Router.
 
 ## Screenshots
 
-![Home Page](HomePage.png)
-![Login Page](LoginPage.png)
-![Patient Dashboard](PatientDashboard.png)
-![Patient Dashboard](PatientDashboard(1).png)
+![Home Page](screenshots/HomePage.png)
+![Login Page](screenshots/LoginPage.png)
+![Patient Dashboard](screenshots/PatientDashboard.png)
+![Patient Dashboard](screenshots/PatientDashboard(1).png)
 
 ## Built With
 - React

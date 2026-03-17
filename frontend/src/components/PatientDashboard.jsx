@@ -1,5 +1,5 @@
 import "./PatientDashboard.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
     Shield, FileText, Pill, FlaskConical, Calendar,
     Dna, CreditCard, Share2, Upload, LogOut,
@@ -7,6 +7,7 @@ import {
     Brain, TrendingUp
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 // ── Mock Data (swap these out when your AI API is ready) ──────────────────────
 
@@ -197,6 +198,26 @@ function PatientDashboard() {
     const [chartRange, setChartRange] = useState("Last 6 months");
     const navigate = useNavigate();
 
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const fetchProfile = async () => {
+            try {
+                const token = localStorage.getItem("token");
+                const response = await axios.get("http://localhost:3001/patient/profile", {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                setUser(response.data.user);
+            } catch (error) {
+                console.error("Failed to fetch profile:", error);
+            }
+        };
+        
+        fetchProfile();
+    }, []);
+
     return (
         <div className="pd-page">
 
@@ -211,11 +232,17 @@ function PatientDashboard() {
                 </div>
                 <div className="pd-header-right">
                     <div className="pd-header-userinfo">
-                        <p className="pd-header-name">{patient.name}</p>
-                        <p className="pd-header-id">Patient ID: {patient.id}</p>
+                        <p className="pd-header-name">{user ? `${user.first_name} ${user.last_name}` : "Loading..."}</p>
+                        <p className="pd-header-id">Patient ID: {user ? user.health_id : ""}</p>
                     </div>
-                    <div className="pd-header-avatar">{patient.initials}</div>
-                    <button className="pd-header-logout" onClick={() => navigate("/")}>
+                    <div className="pd-header-avatar">
+                        {user ? `${user.first_name[0]}${user.last_name[0]}` : ""}
+                    </div>
+                    <button className="pd-header-logout" onClick={() =>  {
+                        localStorage.removeItem("token");
+                        localStorage.removeItem("user");
+                        navigate("/");
+                    }}>
                         <LogOut size={18} />
                     </button>
                 </div>

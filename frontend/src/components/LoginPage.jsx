@@ -2,19 +2,32 @@ import "./LoginPage.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { User, Stethoscope, Eye, EyeOff, ArrowLeft } from "lucide-react";
+import axios from "axios";
 
 function LoginPage() {
     const { role } = useParams();
     const navigate = useNavigate();
     const isPatient = role === "patient";
 
+    const [healthId, setHealthId] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState("");
     const [rememberMe, setRememberMe] = useState(false);
 
-    const handleSignIn = (e) => {
+    const handleSignIn = async (e) => {
         e.preventDefault();
-        navigate(`/dashboard/${role}`);
+        try {
+            const response = await axios.post("http://localhost:3001/auth/login", {
+            healthId,
+            password
+            });
+            localStorage.setItem("token", response.data.token);
+            localStorage.setItem("user", JSON.stringify(response.data.user));
+            
+            navigate(`/dashboard/${response.data.user.role}`);
+        } catch (error) {
+            alert("Invalid credentials. Please try again.");
+        }
     };
 
     return (
@@ -40,6 +53,8 @@ function LoginPage() {
                         className="lp-input"
                         type="text"
                         placeholder={isPatient ? "PAT-1234" : "PHY-1234"}
+                        value={healthId}
+                        onChange={(e) => setHealthId(e.target.value)}
                         required
                     />
                     <span className="lp-input-badge">{isPatient ? "PAT-####" : "PHY-####"}</span>

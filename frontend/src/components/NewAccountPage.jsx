@@ -2,6 +2,7 @@ import "./NewAccountPage.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { User, Stethoscope, Eye, EyeOff, ArrowLeft, CheckCircle } from "lucide-react";
+import axios from "axios";
 
 // TODO: Replace with generated ID from backend
 const mockIds = { patient: "PAT-9848", physician: "PHY-4974" };
@@ -11,12 +12,43 @@ function NewAccountPage() {
     const navigate = useNavigate();
     const isPatient = role === "patient";
 
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [dateOfBirth, setDateOfBirth] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
+    const [licenseNumber, setLicenseNumber] = useState("");
+    const [specialty, setSpecialty] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        navigate(`/login/${role}`);
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        try {
+            const response = await axios.post("http://localhost:3001/auth/register", {
+                firstName,
+                lastName,
+                email,
+                password,
+                role,
+                dateOfBirth,
+                phone
+            });
+        
+            localStorage.setItem("token", response.data.token);
+            localStorage.setItem("user", JSON.stringify(response.data.user));
+            navigate(`/dashboard/${response.data.user.role}`);
+        } catch (error) {
+            alert("Registration failed. Please try again.");
+        }
     };
 
     return (
@@ -53,27 +85,60 @@ function NewAccountPage() {
                 <div className="na-row">
                     <div className="na-field">
                         <label className="na-label">First Name *</label>
-                        <input className="na-input" type="text" placeholder="John" required />
+                        <input 
+                            className="na-input" 
+                            type="text" 
+                            placeholder="John" 
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required 
+                        />
                     </div>
                     <div className="na-field">
                         <label className="na-label">Last Name *</label>
-                        <input className="na-input" type="text" placeholder="Doe" required />
+                        <input 
+                            className="na-input" 
+                            type="text" 
+                            placeholder="Doe" 
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            required 
+                        />
                     </div>
                 </div>
 
                 <div className="na-field">
                     <label className="na-label">Email Address *</label>
-                    <input className="na-input" type="email" placeholder="john.doe@example.com" required />
+                    <input 
+                        className="na-input" 
+                        type="email" 
+                        placeholder="john.doe@example.com" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required 
+                    />
                 </div>
 
                 <div className="na-row">
                     <div className="na-field">
                         <label className="na-label">Phone Number *</label>
-                        <input className="na-input" type="tel" placeholder="(555) 123-4567" required />
+                        <input 
+                            className="na-input" 
+                            type="tel" 
+                            placeholder="(555) 123-4567" 
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            required 
+                        />
                     </div>
                     <div className="na-field">
                         <label className="na-label">Date of Birth *</label>
-                        <input className="na-input" type="date" required />
+                        <input 
+                            className="na-input" 
+                            type="date" 
+                            value={dateOfBirth}
+                            onChange={(e) => setDateOfBirth(e.target.value)}
+                            required />
                     </div>
                 </div>
 
@@ -87,12 +152,25 @@ function NewAccountPage() {
 
                         <div className="na-field">
                             <label className="na-label">Medical License Number *</label>
-                            <input className="na-input" type="text" placeholder="e.g., MD123456" required />
+                            <input 
+                                className="na-input" 
+                                type="text" 
+                                placeholder="e.g., MD123456"
+                                value={licenseNumber}
+                                onChange={(e) => setLicenseNumber(e.target.value)} 
+                                required 
+                            />
                         </div>
 
                         <div className="na-field">
                             <label className="na-label">Specialty *</label>
-                            <input className="na-input" type="text" placeholder="e.g., Cardiology, Family Medicine" required />
+                            <input 
+                                className="na-input" 
+                                type="text"
+                                placeholder="e.g., Cardiology, Family Medicine" 
+                                value={specialty}
+                                onChange={(e) => setSpecialty(e.target.value)}
+                                required />
                         </div>
                     </>
                 )}
@@ -110,6 +188,8 @@ function NewAccountPage() {
                             className="na-input"
                             type={showPassword ? "text" : "password"}
                             placeholder="Create a strong password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             required
                         />
                         <button type="button" className="na-eye-btn" onClick={() => setShowPassword(v => !v)}>
@@ -126,6 +206,8 @@ function NewAccountPage() {
                             className="na-input"
                             type={showConfirm ? "text" : "password"}
                             placeholder="Re-enter your password"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
                             required
                         />
                         <button type="button" className="na-eye-btn" onClick={() => setShowConfirm(v => !v)}>

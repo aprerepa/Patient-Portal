@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import MedicalRecords from "./MedicalRecords";
+import Genomics from "./Genomics";
 
 // ── Mock Data (swap these out when your AI API is ready) ──────────────────────
 
@@ -267,6 +269,8 @@ function PatientDashboard() {
                     </div>
                 </nav>
 
+                {activeTab === "Dashboard" && <>
+
                 {/* AI Daily Summary */}
                 <div className="pd-ai-summary">
                     <div className="pd-ai-summary-icon"><Brain size={22} /></div>
@@ -396,6 +400,9 @@ function PatientDashboard() {
                     </div>
 
                 </div>
+                </>}
+                {activeTab === "Medical Records" && <MedicalRecords />}
+                {activeTab === "Genomics" && <Genomics />}
             </div>
         </div>
     );

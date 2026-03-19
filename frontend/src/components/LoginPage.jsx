@@ -18,8 +18,8 @@ function LoginPage() {
         e.preventDefault();
         try {
             const response = await axios.post("http://localhost:3001/auth/login", {
-            healthId,
-            password
+                healthId,
+                password
             });
             localStorage.setItem("token", response.data.token);
             localStorage.setItem("user", JSON.stringify(response.data.user));

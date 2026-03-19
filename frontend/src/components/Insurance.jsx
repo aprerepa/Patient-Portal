@@ -144,7 +144,7 @@ function Insurance() {
             {/* Current Coverage */}
             <div className="ins-card">
                 <div className="ins-section-title-row">
-                    <Shield size={17} className="ins-blue-icon" />
+                    <Shield size={20} className="ins-blue-icon" />
                     <h2 className="ins-section-title">Current Coverage</h2>
                 </div>
                 <div className="ins-coverage-grid">
@@ -187,7 +187,7 @@ function Insurance() {
                 {/* Deductible */}
                 <div className="ins-card">
                     <div className="ins-section-title-row">
-                        <DollarSign size={17} className="ins-green-icon" />
+                        <DollarSign size={20} className="ins-green-icon" />
                         <h2 className="ins-section-title">Deductible Progress</h2>
                     </div>
                     <div className="ins-progress-row">
@@ -210,7 +210,7 @@ function Insurance() {
                 {/* Out of Pocket */}
                 <div className="ins-card">
                     <div className="ins-section-title-row">
-                        <TrendingUp size={17} className="ins-purple-icon" />
+                        <TrendingUp size={20} className="ins-purple-icon" />
                         <h2 className="ins-section-title">Out-of-Pocket Maximum</h2>
                     </div>
                     <div className="ins-progress-row">
@@ -234,7 +234,7 @@ function Insurance() {
             {/* Recent Claims */}
             <div className="ins-card">
                 <div className="ins-section-title-row">
-                    <FileText size={17} className="ins-blue-icon" />
+                    <FileText size={20} className="ins-blue-icon" />
                     <h2 className="ins-section-title">Recent Claims</h2>
                     <button className="ins-view-all">View All Claims</button>
                 </div>
@@ -284,7 +284,7 @@ function Insurance() {
             {/* Pre-Authorizations */}
             <div className="ins-card">
                 <div className="ins-section-title-row">
-                    <FileText size={17} className="ins-purple-icon" />
+                    <FileText size={20} className="ins-purple-icon" />
                     <h2 className="ins-section-title">Pre-Authorizations</h2>
                 </div>
                 <div className="ins-preauths">
@@ -319,7 +319,7 @@ function Insurance() {
             {/* Predicted Costs */}
             <div className="ins-card">
                 <div className="ins-section-title-row">
-                    <CreditCard size={17} className="ins-green-icon" />
+                    <CreditCard size={20} className="ins-green-icon" />
                     <h2 className="ins-section-title">Predicted Healthcare Costs</h2>
                 </div>
                 <p className="ins-section-sub">AI-powered cost predictions based on your scheduled appointments and treatment plans.</p>
@@ -356,7 +356,7 @@ function Insurance() {
             {/* Digital Insurance Card */}
             <div className="ins-card">
                 <div className="ins-section-title-row">
-                    <CreditCard size={17} className="ins-blue-icon" />
+                    <CreditCard size={20} className="ins-blue-icon" />
                     <h2 className="ins-section-title">Digital Insurance Card</h2>
                     <button className="ins-download-btn">
                         <Download size={14} /> Download Card
@@ -368,7 +368,7 @@ function Insurance() {
                             <p className="ins-id-provider">{coverage.provider}</p>
                             <p className="ins-id-plan">{coverage.plan}</p>
                         </div>
-                        <Shield size={28} className="ins-id-shield" />
+                        <Shield size={32} className="ins-id-shield" />
                     </div>
                     <div className="ins-id-card-bottom">
                         <div>

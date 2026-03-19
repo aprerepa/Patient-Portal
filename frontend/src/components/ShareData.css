@@ -1,0 +1,441 @@
+.sd-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Color icons */
+.sd-blue-icon { color: rgb(0, 87, 235); }
+.sd-gray-icon { color: rgb(130, 140, 160); }
+
+/* Banner */
+.sd-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgb(230, 241, 255);
+    border: 1.5px solid rgb(190, 215, 255);
+    border-radius: 14px;
+    padding: 20px 24px;
+    gap: 16px;
+}
+
+.sd-banner-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.sd-banner-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgb(0, 87, 235);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sd-banner-title {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(0, 60, 160);
+}
+
+.sd-banner-body {
+    margin: 0 0 12px;
+    font-size: 13px;
+    color: rgb(0, 80, 180);
+    line-height: 1.5;
+}
+
+/* Health ID box */
+.sd-health-id-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sd-health-id-box {
+    background: white;
+    border: 1.5px solid rgb(190, 215, 255);
+    border-radius: 8px;
+    padding: 8px 14px;
+}
+
+.sd-health-id-label {
+    margin: 0 0 2px;
+    font-size: 11px;
+    color: rgb(0, 80, 180);
+}
+
+.sd-health-id-value {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(0, 60, 160);
+}
+
+.sd-copy-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: white;
+    border: 1.5px solid rgb(190, 215, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgb(0, 87, 235);
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+
+.sd-copy-btn:hover { background: rgb(215, 232, 255); }
+
+/* Share Access button */
+.sd-share-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 20px;
+    background: rgb(0, 87, 235);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background-color 0.15s;
+    height: 40px;
+}
+
+.sd-share-btn:hover { background-color: rgb(9, 83, 211); }
+
+/* Sub-tabs */
+.sd-subtabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 12px;
+    padding: 7px;
+    gap: 4px;
+    height: 40px;
+}
+
+.sd-subtab {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    color: rgb(100, 110, 130);
+    background: transparent;
+    transition: background 0.15s, color 0.15s;
+}
+
+.sd-subtab-active {
+    background: rgb(0, 87, 235);
+    color: white;
+}
+
+.sd-subtab:not(.sd-subtab-active):hover {
+    background: rgb(235, 243, 255);
+    color: rgb(0, 87, 235);
+}
+
+/* Cards */
+.sd-card {
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sd-section-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.sd-section-sub {
+    margin: -6px 0 0;
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+}
+
+/* Share items */
+.sd-shares {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sd-share-item {
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sd-share-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.sd-share-name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sd-share-name {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.sd-active-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 8px;
+    background: rgb(220, 250, 230);
+    color: rgb(0, 130, 50);
+    border-radius: 99px;
+}
+
+.sd-revoke-btn {
+    background: none;
+    border: none;
+    color: rgb(210, 40, 40);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+.sd-revoke-btn:hover { text-decoration: underline; }
+
+.sd-share-id {
+    margin: 0;
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+.sd-share-role {
+    margin: 0;
+    font-size: 13px;
+    color: rgb(80, 90, 110);
+}
+
+.sd-share-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.sd-meta-label {
+    margin: 0 0 3px;
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+.sd-meta-value {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.sd-share-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    border-top: 1px solid rgb(235, 240, 248);
+    padding-top: 10px;
+}
+
+.sd-shared-date {
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+    flex: 1;
+}
+
+.sd-activity-btn {
+    background: none;
+    border: none;
+    color: rgb(0, 87, 235);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+.sd-activity-btn:hover { text-decoration: underline; }
+
+/* Quick Share Options */
+.sd-quick-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.sd-quick-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 18px;
+    background: white;
+    border: 2px dashed rgb(210, 220, 235);
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.sd-quick-btn:hover {
+    border-color: rgb(0, 87, 235);
+    background: rgb(248, 251, 255);
+}
+
+.sd-quick-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.sd-quick-sub {
+    margin: 0;
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+    line-height: 1.5;
+}
+
+/* Recent Activity */
+.sd-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sd-activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.sd-activity-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 99px;
+    background: rgb(230, 241, 255);
+    color: rgb(0, 87, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sd-activity-title {
+    margin: 0 0 3px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.sd-activity-meta {
+    margin: 0;
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+/* Privacy note */
+.sd-privacy {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: rgb(230, 241, 255);
+    border: 1.5px solid rgb(190, 215, 255);
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
+.sd-privacy-title {
+    margin: 0 0 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(0, 60, 160);
+}
+
+.sd-privacy-body {
+    margin: 0;
+    font-size: 13px;
+    color: rgb(0, 80, 180);
+    line-height: 1.6;
+}
+
+/* Empty state */
+.sd-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 40px;
+    color: rgb(150, 160, 175);
+    font-size: 14px;
+}
+
+.sd-empty-icon { color: rgb(200, 210, 225); }
+
+/* View Records button */
+.sd-view-btn {
+    padding: 8px 18px;
+    background: rgb(0, 87, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background-color 0.15s;
+}
+
+.sd-view-btn:hover { background-color: rgb(9, 83, 211); }
+
+/* Shared With Me three-column meta */
+.sd-shared-with-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+}

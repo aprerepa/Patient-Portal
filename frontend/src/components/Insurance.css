@@ -1,0 +1,505 @@
+.ins-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Color icons */
+.ins-blue-icon   { color: rgb(0, 87, 235); }
+.ins-green-icon  { color: rgb(0, 160, 60); }
+.ins-purple-icon { color: rgb(120, 60, 220); }
+.ins-red-icon    { color: rgb(210, 40, 40); }
+.ins-yellow-icon { color: rgb(180, 130, 0); }
+
+/* AI Banner */
+.ins-ai-banner {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: rgb(230, 241, 255);
+    border: 1.5px solid rgb(190, 215, 255);
+    border-radius: 14px;
+    padding: 20px 24px;
+}
+
+.ins-ai-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgb(0, 87, 235);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ins-ai-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ins-ai-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(0, 60, 160);
+}
+
+.ins-ai-body {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(0, 80, 180);
+    line-height: 1.6;
+}
+
+.ins-ai-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 18px;
+    background: rgb(0, 87, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.15s;
+}
+
+.ins-ai-btn:hover {
+    background-color: rgb(9, 83, 211);
+}
+
+/* Cards */
+.ins-card {
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ins-section-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ins-section-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+    flex: 1;
+}
+
+.ins-section-sub {
+    margin: -6px 0 0;
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+    line-height: 1.5;
+}
+
+/* Coverage grid */
+.ins-coverage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.ins-provider-name {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ins-plan-name {
+    margin: 0 0 16px;
+    font-size: 14px;
+    color: rgb(70, 81, 98);
+}
+
+.ins-coverage-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ins-field-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.ins-field-label {
+    color: rgb(70, 81, 98);
+}
+
+.ins-field-value {
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ins-copay-title {
+    margin: 0 0 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ins-copay-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.ins-copay-label {
+    color: rgb(70, 81, 98);
+}
+
+.ins-copay-amount {
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+/* Two column layout */
+.ins-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Progress bars */
+.ins-progress-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ins-progress-label {
+    font-size: 14px;
+    color: rgb(70, 81, 98);
+}
+
+.ins-progress-amount {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ins-bar-bg {
+    height: 10px;
+    background: rgb(235, 238, 245);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.ins-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+}
+
+.ins-bar-green  { background: rgb(0, 160, 60); }
+.ins-bar-purple { background: rgb(120, 60, 220); }
+
+.ins-progress-sub {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+    margin-top: -4px;
+}
+
+/* AI notes */
+.ins-ai-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.ins-ai-blue  { background: rgb(230, 241, 255); color: rgb(0, 65, 180); }
+.ins-ai-green { background: rgb(236, 253, 242); color: rgb(0, 120, 45); }
+.ins-ai-purple { background: rgb(245, 238, 255); color: rgb(90, 40, 180); }
+
+/* View all */
+.ins-view-all {
+    background: none;
+    border: none;
+    color: rgb(0, 87, 235);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.ins-view-all:hover { text-decoration: underline; }
+
+/* Claims */
+.ins-claims {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ins-claim {
+    border-radius: 12px;
+    padding: 16px 18px;
+    border-left: 4px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ins-claim-green { background: rgb(240, 253, 244); border-color: rgb(0, 160, 60); }
+.ins-claim-red   { background: rgb(255, 245, 245); border-color: rgb(210, 40, 40); }
+
+.ins-claim-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.ins-claim-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.ins-claim-title {
+    margin: 0 0 3px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ins-claim-sub {
+    margin: 0;
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+/* Status badges */
+.ins-status-badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.ins-status-green  { background: rgb(210, 248, 225); color: rgb(0, 130, 50); }
+.ins-status-red    { background: rgb(255, 220, 220); color: rgb(180, 30, 30); }
+.ins-status-yellow { background: rgb(255, 240, 200); color: rgb(150, 100, 0); }
+
+/* Amounts */
+.ins-claim-amounts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.ins-amount-label {
+    margin: 0 0 4px;
+    font-size: 12px;
+    color: rgb(70, 81, 98);;
+}
+
+.ins-amount-value {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ins-claim-ai {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: white;
+    border: 1px solid rgb(220, 228, 240);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: rgb(0, 87, 235);
+    line-height: 1.5;
+}
+
+.ins-appeal-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 18px;
+    background: rgb(210, 40, 40);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.15s;
+}
+
+.ins-appeal-btn:hover { background: rgb(180, 30, 30); }
+
+/* Pre-auths */
+.ins-preauths {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ins-preauth {
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ins-preauth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.ins-preauth-title {
+    margin: 0 0 3px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ins-preauth-sub {
+    margin: 0;
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+.ins-preauth-dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.ins-preauth-date {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ins-preauth-ai {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Predicted costs */
+.ins-predicted {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ins-predicted-item {
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Digital Insurance Card */
+.ins-download-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    color: rgb(60, 70, 90);
+    margin-left: auto;
+    transition: border-color 0.15s;
+}
+
+.ins-download-btn:hover { border-color: rgb(0, 87, 235); color: rgb(0, 87, 235); }
+
+.ins-id-card {
+    background: linear-gradient(135deg, rgb(0, 87, 235), rgb(30, 60, 200));
+    border-radius: 14px;
+    padding: 24px 28px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ins-id-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.ins-id-provider {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+
+.ins-id-plan {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.ins-id-shield {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ins-id-card-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.ins-id-field-label {
+    margin: 0 0 4px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.ins-id-field-value {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}

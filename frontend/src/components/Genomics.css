@@ -29,7 +29,7 @@
     border: none;
     border-radius: 9px;
     cursor: pointer;
-    color: rgb(100, 110, 130);
+    color: rgb(70, 81, 98);
     background: transparent;
     transition: background 0.15s, color 0.15s;
 }
@@ -164,7 +164,7 @@
 .gn-section-sub {
     margin: -6px 0 0;
     font-size: 13px;
-    color: rgb(100, 110, 130);
+    color: rgb(70, 81, 98);
     line-height: 1.5;
 }
 
@@ -240,7 +240,7 @@
 .gn-variant-loc {
     margin: 0;
     font-size: 12px;
-    color: rgb(120, 130, 150);
+    color: rgb(70, 81, 98);
 }
 
 .gn-risk-label {
@@ -256,13 +256,13 @@
 .gn-variant-assoc {
     margin: 0;
     font-size: 13px;
-    color: rgb(60, 70, 90);
+    color: rgb(70, 81, 98);
 }
 
 .gn-variant-desc {
     margin: 0;
     font-size: 13px;
-    color: rgb(80, 90, 110);
+    color: rgb(70, 81, 98);
     line-height: 1.5;
 }
 
@@ -290,7 +290,7 @@
 .gn-rec-label {
     margin: 0 0 4px;
     font-size: 12px;
-    color: rgb(130, 140, 160);
+    color: rgb(70, 81, 98);
 }
 
 .gn-rec-text {
@@ -332,13 +332,13 @@
 .gn-pgx-gene {
     margin: 0;
     font-size: 12px;
-    color: rgb(120, 130, 150);
+    color: rgb(70, 81, 98);
 }
 
 .gn-pgx-effect {
     margin: 0;
     font-size: 13px;
-    color: rgb(60, 70, 90);
+    color: rgb(70, 81, 98);
 }
 
 .gn-pgx-rec {
@@ -406,7 +406,7 @@
 .gn-implications-label {
     margin: 0 0 4px;
     font-size: 13px;
-    color: rgb(80, 90, 110);
+    color: rgb(70, 81, 98);
     font-weight: 500;
 }
 
@@ -443,7 +443,7 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: rgb(80, 90, 110);
+    color: rgb(70, 81, 98);
 }
 
 .gn-trait-name {
@@ -456,7 +456,7 @@
 .gn-trait-gene {
     margin: 0 0 4px;
     font-size: 12px;
-    color: rgb(130, 140, 160);
+    color: rgb(70, 81, 98);
 }
 
 .gn-trait-result {
@@ -549,7 +549,7 @@
 .gn-plan-desc {
     margin: 0;
     font-size: 13px;
-    color: rgb(60, 70, 90);
+    color: rgb(70, 81, 98);
     line-height: 1.5;
 }
 
@@ -574,7 +574,7 @@
     color: rgb(100, 110, 130);
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
 }
 
 /* PGx Interactions */
@@ -603,7 +603,7 @@
 .gn-interaction-variant {
     margin: 0;
     font-size: 13px;
-    color: rgb(100, 110, 130);
+    color: rgb(70, 81, 98);
 }
 
 .gn-interaction-row {
@@ -616,7 +616,7 @@
 .gn-interaction-label {
     margin: 0 0 6px;
     font-size: 12px;
-    color: rgb(130, 140, 160);
+    color: rgb(70, 81, 98);
 }
 
 .gn-med-tags {
@@ -631,7 +631,7 @@
     background: rgb(242, 244, 248);
     border: 1px solid rgb(220, 228, 240);
     border-radius: 6px;
-    color: rgb(60, 70, 90);
+    color: rgb(70, 81, 98);
 }
 
 .gn-none-tag {
@@ -648,7 +648,7 @@
     align-items: flex-start;
     gap: 8px;
     font-size: 13px;
-    color: rgb(60, 70, 90);
+    color: rgb(70, 81, 98);
 }
 
 .gn-ai-label {
@@ -689,13 +689,13 @@
 .gn-schedule-reason {
     margin: 0;
     font-size: 12px;
-    color: rgb(100, 110, 130);
+    color: rgb(70, 81, 98);
 }
 
 .gn-schedule-freq {
     margin: 0;
     font-size: 12px;
-    color: rgb(130, 140, 160);
+    color: rgb(70, 81, 98);;
 }
 
 /* Status badges */
@@ -761,7 +761,7 @@
 .gn-risk-sub {
     margin: 0 0 2px;
     font-size: 12px;
-    color: rgb(130, 140, 160);
+    color: rgb(70, 81, 98);
 }
 
 .gn-risk-val {

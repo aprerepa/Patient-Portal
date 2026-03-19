@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
     Sparkles, Brain, CheckCircle, AlertTriangle, Info,
     Pill, Activity, TrendingUp, Calendar, Shield,
-    Users, Dna, Heart, Target, Sun, Droplet
+    Users, Dna, Heart, Target, Sun, Droplet, Lightbulb
 } from "lucide-react";
 
 // TODO: Replace with GET /api/patient/genomics
@@ -372,8 +372,8 @@ function AIAnalysis() {
                                 ))}
                             </div>
                             <div className="gn-plan-footer">
-                                <span className="gn-plan-meta"><span className="gn-blue-icon">💡</span> Evidence: {p.evidence}</span>
-                                <span className="gn-plan-meta"><span className="gn-purple-icon">📅</span> Timeline: {p.timeline}</span>
+                                <span className="gn-plan-meta"><Lightbulb size={13} className="gn-blue-icon" /> Evidence: {p.evidence}</span>
+                                <span className="gn-plan-meta"><Calendar size={13} className="gn-purple-icon" /> Timeline: {p.timeline}</span>
                             </div>
                         </div>
                     ))}

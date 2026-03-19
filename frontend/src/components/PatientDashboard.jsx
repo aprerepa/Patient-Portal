@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import MedicalRecords from "./MedicalRecords";
 import Genomics from "./Genomics";
+import Insurance from "./Insurance";
 
 // ── Mock Data (swap these out when your AI API is ready) ──────────────────────
 
@@ -403,6 +404,7 @@ function PatientDashboard() {
                 </>}
                 {activeTab === "Medical Records" && <MedicalRecords />}
                 {activeTab === "Genomics" && <Genomics />}
+                {activeTab === "Insurance" && <Insurance />}
             </div>
         </div>
     );

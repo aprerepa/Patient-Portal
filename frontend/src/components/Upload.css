@@ -1,0 +1,297 @@
+.up-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.up-blue-icon { color: rgb(0, 87, 235); }
+
+/* Banner */
+.up-banner {
+    background: rgb(230, 241, 255);
+    border: 1.5px solid rgb(190, 215, 255);
+    border-radius: 14px;
+    padding: 18px 22px;
+}
+
+.up-banner-title {
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(0, 60, 160);
+}
+
+.up-banner-body {
+    margin: 0;
+    font-size: 13px;
+    color: rgb(0, 80, 180);
+    line-height: 1.6;
+}
+
+/* Drop Zone */
+.up-dropzone {
+    border: 2px dashed rgb(210, 220, 235);
+    border-radius: 14px;
+    padding: 50px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background: white;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.up-dropzone:hover,
+.up-dropzone-active {
+    border-color: rgb(0, 87, 235);
+    background: rgb(248, 251, 255);
+}
+
+.up-drop-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 99px;
+    background: rgb(230, 241, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.up-drop-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.up-drop-sub {
+    margin: 0;
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+}
+
+.up-select-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 6px;
+    padding: 10px 24px;
+    background: rgb(0, 87, 235);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.up-select-btn:hover { background-color: rgb(9, 83, 211); }
+
+/* File Type Cards */
+.up-types-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.up-type-card {
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 12px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.up-type-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.up-type-icon-blue   { color: rgb(0, 87, 235); }
+.up-type-icon-green  { color: rgb(0, 160, 60); }
+.up-type-icon-purple { color: rgb(120, 60, 220); }
+.up-type-icon-orange { color: rgb(210, 80, 20); }
+
+.up-type-label {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.up-type-sub {
+    margin: 0;
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+/* Connect Data Sources */
+.up-card {
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.up-section-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.up-section-sub {
+    margin: -6px 0 0;
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+}
+
+.up-sources-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.up-source-item {
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 50px;
+}
+
+.up-source-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.up-source-name {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.up-not-connected {
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+.up-source-desc {
+    margin: 0;
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+}
+
+/* Uploaded files */
+.up-green-icon { color: rgb(0, 160, 60); }
+
+.up-files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.up-file-item {
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.up-file-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.up-file-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.up-file-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgb(230, 241, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.up-file-name {
+    margin: 0 0 2px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.up-file-size {
+    margin: 0 0 4px;
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+.up-file-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: rgb(0, 160, 60);
+}
+
+.up-remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(70, 81, 98);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.up-remove-btn:hover { color: rgb(80, 90, 110); }
+
+.up-file-ai {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: rgb(236, 253, 242);
+    border: 1px solid rgb(180, 235, 200);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.up-file-ai-cat {
+    margin: 0 0 2px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(0, 120, 50);
+}
+
+.up-file-ai-sub {
+    margin: 0;
+    font-size: 12px;
+    color: rgb(0, 130, 55);
+}

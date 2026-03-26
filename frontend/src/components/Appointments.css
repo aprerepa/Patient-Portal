@@ -1,0 +1,635 @@
+.ap-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* AI Banner */
+.ap-ai-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgb(245, 240, 255);
+    border: 1.5px solid rgb(200, 175, 255);
+    border-radius: 14px;
+    padding: 25px 24px;
+    height: 50px;
+}
+
+.ap-ai-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgb(120, 60, 220);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ap-ai-title {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(80, 40, 160);
+}
+
+.ap-ai-text {
+    margin: 0;
+    font-size: 13px;
+    color: rgb(100, 60, 180);
+    line-height: 1.5;
+}
+
+/* Stat Cards */
+.ap-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.ap-stat-card {
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: box-shadow 0.15s;
+}
+
+.ap-stat-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.ap-stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.ap-stat-label {
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+    font-weight: 500;
+}
+
+.ap-stat-icon { flex-shrink: 0; }
+.ap-stat-icon-blue   { color: rgb(0, 87, 235); }
+.ap-stat-icon-green  { color: rgb(0, 160, 60); }
+.ap-stat-icon-purple { color: rgb(120, 60, 220); }
+.ap-stat-icon-orange { color: rgb(220, 100, 0); }
+
+.ap-stat-value {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+    line-height: 1;
+}
+
+.ap-stat-sub {
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+/* Section */
+.ap-section {
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ap-section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ap-section-icon {
+    color: rgb(120, 60, 220);
+}
+
+.ap-section-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+/* AI Recommendations */
+.ap-recommendations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ap-rec-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border-left: 4px solid;
+}
+
+.ap-rec-high   { background: rgb(255, 243, 243); border-color: rgb(220, 50, 50); }
+.ap-rec-medium { background: rgb(255, 251, 230); border-color: rgb(210, 150, 0); }
+.ap-rec-low    { background: rgb(230, 241, 255); border-color: rgb(0, 87, 235); }
+
+.ap-rec-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.ap-rec-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.ap-rec-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ap-priority-badge {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+}
+
+.ap-priority-high   { background: rgb(255, 220, 220); color: rgb(180, 30, 30); }
+.ap-priority-medium { background: rgb(255, 235, 180); color: rgb(160, 100, 0); }
+.ap-priority-low    { background: rgb(210, 230, 255); color: rgb(0, 65, 180); }
+
+.ap-rec-text {
+    margin: 0;
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+    line-height: 1.4;
+}
+
+.ap-rec-btn {
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    background: rgb(0, 87, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+
+.ap-rec-btn:hover {
+    background: rgb(9, 83, 211);
+}
+
+/* List Header */
+.ap-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.ap-subtabs {
+    display: flex;
+    gap: 4px;
+    background: rgb(240, 244, 248);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.ap-subtab {
+    padding: 7px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: transparent;
+    color: rgb(70, 81, 98);
+    transition: background 0.15s, color 0.15s;
+}
+
+.ap-subtab-active {
+    background: rgb(0, 87, 235);
+    color: white;
+}
+
+.ap-list-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ap-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgb(70, 81, 98);
+    transition: border-color 0.15s;
+}
+
+.ap-filter-btn:hover {
+    border-color: rgb(0, 87, 235);
+    color: rgb(0, 87, 235);
+}
+
+.ap-book-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    background: rgb(0, 87, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.ap-book-btn:hover {
+    background: rgb(9, 83, 211);
+}
+
+/* Appointment List */
+.ap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ap-empty {
+    text-align: center;
+    padding: 40px;
+    color: rgb(70, 81, 98);
+    font-size: 14px;
+}
+
+/* Appointment Card */
+.ap-card {
+    display: flex;
+    gap: 16px;
+    padding: 18px 20px;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 12px;
+    transition: box-shadow 0.15s;
+    cursor: pointer;
+}
+
+.ap-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Date Badge */
+.ap-date-badge {
+    width: 54px;
+    min-width: 54px;
+    background: rgb(230, 241, 255);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    gap: 2px;
+}
+
+.ap-date-month {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgb(0, 87, 235);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ap-date-day {
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(0, 65, 180);
+    line-height: 1;
+}
+
+/* Card Body */
+.ap-card-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ap-card-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ap-card-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ap-card-chevron {
+    color: rgb(70, 81, 98);
+    flex-shrink: 0;
+}
+
+/* Tags */
+.ap-card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.ap-type-tag,
+.ap-status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 6px;
+}
+
+.ap-type-inperson  { background: rgb(220, 248, 230); color: rgb(0, 120, 45); }
+.ap-type-telehealth { background: rgb(225, 235, 255); color: rgb(0, 65, 180); }
+.ap-type-lab        { background: rgb(240, 232, 255); color: rgb(100, 40, 200); }
+
+.ap-status-confirmed { background: rgb(220, 248, 230); color: rgb(0, 120, 45); }
+.ap-status-pending   { background: rgb(255, 245, 210); color: rgb(160, 100, 0); }
+.ap-status-completed { background: rgb(240, 244, 248); color: rgb(70, 81, 98); }
+
+/* Card Details */
+.ap-card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ap-detail {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+}
+
+.ap-detail svg {
+    flex-shrink: 0;
+    color: rgb(70, 81, 98);
+}
+
+.ap-physician-id {
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+    margin-left: 4px;
+}
+
+/* Card AI */
+.ap-card-ai {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 9px 12px;
+    background: rgb(245, 240, 255);
+    border-radius: 8px;
+    font-size: 13px;
+    color: rgb(100, 60, 180);
+    line-height: 1.4;
+}
+
+.ap-card-ai svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: rgb(120, 60, 220);
+}
+
+/* Bottom Row */
+.ap-bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Pattern Card */
+.ap-pattern-card,
+.ap-careteam-card {
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ap-patterns {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ap-pattern-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ap-pattern-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ap-pattern-label {
+    font-size: 13px;
+    color: rgb(15, 20, 40);
+    font-weight: 500;
+}
+
+.ap-pattern-rating {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.ap-rating-green { color: rgb(0, 160, 60); }
+.ap-rating-blue  { color: rgb(0, 87, 235); }
+
+.ap-progress-track {
+    height: 8px;
+    background: rgb(220, 228, 240);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.ap-progress-fill {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.3s ease;
+}
+
+.ap-progress-green { background: rgb(0, 160, 60); }
+.ap-progress-blue  { background: rgb(0, 87, 235); }
+
+.ap-pattern-sub {
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+.ap-pattern-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: rgb(245, 240, 255);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: rgb(100, 60, 180);
+    line-height: 1.5;
+}
+
+.ap-pattern-insight svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: rgb(120, 60, 220);
+}
+
+/* Care Team */
+.ap-careteam-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ap-doctor-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 10px;
+    transition: box-shadow 0.15s;
+}
+
+.ap-doctor-card:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ap-doctor-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ap-avatar-blue   { background: rgb(225, 238, 255); color: rgb(0, 87, 235); }
+.ap-avatar-red    { background: rgb(255, 225, 225); color: rgb(200, 40, 40); }
+.ap-avatar-green  { background: rgb(220, 248, 230); color: rgb(0, 140, 55); }
+
+.ap-doctor-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ap-doctor-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ap-doctor-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.ap-doctor-id {
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+.ap-doctor-specialty {
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+}
+
+.ap-doctor-visits {
+    font-size: 12px;
+    color: rgb(70, 81, 98);
+}
+
+.ap-viewall-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgb(0, 87, 235);
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.ap-viewall-btn:hover {
+    border-color: rgb(0, 87, 235);
+    background: rgb(235, 243, 255);
+}
+
+.ap-careteam-ai {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: rgb(245, 240, 255);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: rgb(100, 60, 180);
+    line-height: 1.5;
+}
+
+.ap-careteam-ai svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: rgb(120, 60, 220);
+}

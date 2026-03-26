@@ -13,6 +13,7 @@ import Genomics from "./Genomics";
 import Insurance from "./Insurance";
 import ShareData from "./ShareData";
 import UploadTab from "./Upload";
+import Appointments from "./Appointments";
 
 
 // ── Mock Data (swap these out when your AI API is ready) ──────────────────────
@@ -117,6 +118,7 @@ const navTabs = [
     { label: "Insurance",       icon: <CreditCard  size={15} /> },
     { label: "Share Data",      icon: <Share2      size={15} /> },
     { label: "Upload",          icon: <Upload      size={15} /> },
+    { label: "Appointments",    icon: <Calendar    size={15} /> },
 ];
 
 // ── Pure SVG line chart (no dependencies) ────────────────────────────────────
@@ -410,6 +412,7 @@ function PatientDashboard() {
                 {activeTab === "Insurance" && <Insurance />}
                 {activeTab === "Share Data" && <ShareData />}
                 {activeTab === "Upload" && <UploadTab />}
+                {activeTab === "Appointments" && <Appointments />}
             </div>
         </div>
     );

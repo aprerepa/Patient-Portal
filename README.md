@@ -1,6 +1,6 @@
 # Patient Portal
 
-A role-based healthcare portal UI built with React and React Router.
+A full-stack, role-based patient portal built with React, TypeScript, Node.js/Express, and PostgreSQL. Features secure authentication, protected REST APIs, and modular dashboard workflows for patient and physician users.
 
 ## Screenshots
 
@@ -10,21 +10,36 @@ A role-based healthcare portal UI built with React and React Router.
 ![Patient Dashboard](screenshots/PatientDashboard(1).png)
 
 ## Built With
-- React
-- React Router
-- Lucide React (icons)
+Frontend: React, TypeScript, React Router, CSS, Lucide React
+Backend: Node.js, Express, TypeScript, PostgreSQL, Argon2, JWT, CORS, cookie-parser
+Tools: Postman, DBeaver
 
 ## Features Implemented
+
+### Authentication & Security
+- Argon2 password hashing for secure credential storage
+- JWT-based authorization with protected route middleware
+- Parameterized PostgreSQL queries to prevent SQL injection
+- Role-based routing and access control (patient / physician)
+
+### Backend API
+- POST /auth/register — create a new patient or physician account
+- POST /auth/login — authenticate and receive a JWT
+- GET /patient/profile — retrieve patient profile data (protected)
+- GET /patient/vitals — retrieve patient vitals (protected)
+- GET /patient/records — retrieve medical records (protected)
+- GET /patient/medications — retrieve medications (protected)
+- GET /patient/appointments — retrieve appointments (protected)
 
 ### Role Selection
 - Dual-role landing page (Patient / Physician)
 - Role-specific color theming throughout (blue for patient, green for physician)
-- Reusable `RoleSelect` component with dynamic props, bullet lists, and hover animations
+- Reusable RoleSelect component with dynamic props, bullet lists, and hover animations
 
 ### Login Page
-- Role-specific icon, title, and color scheme driven by `useParams`
+- Role-specific icon, title, and color scheme driven by useParams
 - Health ID input with format badge (PAT-#### / PHY-####)
-- Password field with show/hide toggle using `useState`
+- Password field with show/hide toggle using useState
 - Remember me checkbox
 - Forgot password and Create Account navigation
 - Back to role selection button
@@ -40,10 +55,11 @@ A role-based healthcare portal UI built with React and React Router.
 - Password and confirm password fields with independent show/hide toggles
 - Terms of Service checkbox with required validation
 - Already have an account? Sign in link
+- Integrated with /auth/register backend endpoint
 
 ### Patient Dashboard
 - Sticky header with brand logo, user info, and logout button
-- Tab-based navigation bar
+- Tab-based navigation bar with modules for Appointments, Medications, Medical Records, Vitals, Genomics, and Profile
 - AI health summary banner
 - Stats grid showing vitals and health metrics
 - Safety alert component with badge and color-coded styling
@@ -52,14 +68,8 @@ A role-based healthcare portal UI built with React and React Router.
 - Recent activity feed with icons and timestamps
 - Risk assessment section with labeled progress bars
 
-## Routing Structure
-- `/` — Role selection
-- `/login/:role` — Login
-- `/forgotpassword/:role` — Forgot password
-- `/newaccount/:role` — Account creation
-- `/dashboard/:role` — Dashboard
-
-## In Progress
-- Physician dashboard
-- Backend / authentication logic
-- Patient data integration
+### In Progress
+- Physician dashboard workflows
+- Write/update routes for patient and physician interactions
+- End-to-end live data connection for all dashboard modules
+- Improved validation and error handling across API layers

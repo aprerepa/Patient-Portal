@@ -14,7 +14,7 @@ Frontend: React, TypeScript, React Router, CSS, Lucide React
 
 Backend: Node.js, Express, TypeScript, PostgreSQL, Argon2, JWT, CORS, cookie-parser
 
-Tools: Postman, DBeaver
+Tools: Git/GitHub, Postman, DBeaver
 
 ## Features Implemented
 

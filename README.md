@@ -22,7 +22,7 @@ Tools: Postman, DBeaver
 - Argon2 password hashing for secure credential storage
 - JWT-based authorization with protected route middleware
 - Parameterized PostgreSQL queries to prevent SQL injection
-- Role-based routing and access control (patient / physician)
+- Role-based routing and access control (patient/physician)
 
 ### Backend API
 - POST /auth/register — create a new patient or physician account
@@ -33,45 +33,13 @@ Tools: Postman, DBeaver
 - GET /patient/medications — retrieve medications (protected)
 - GET /patient/appointments — retrieve appointments (protected)
 
-### Role Selection
-- Dual-role landing page (Patient / Physician)
-- Role-specific color theming throughout (blue for patient, green for physician)
-- Reusable RoleSelect component with dynamic props, bullet lists, and hover animations
-
-### Login Page
-- Role-specific icon, title, and color scheme driven by useParams
-- Health ID input with format badge (PAT-#### / PHY-####)
-- Password field with show/hide toggle using useState
-- Remember me checkbox
-- Forgot password and Create Account navigation
-- Back to role selection button
-
-### Forgot Password Page
-- Health ID or email input
-- Form submission with success state — UI switches to confirmation message without a page reload
-- Back to sign in navigation
-
-### Account Creation Page
-- Multi-section form: Personal Information, Security, and a Physician-only Professional Information section that conditionally renders based on role
-- Auto-generated Health ID displayed in a banner (e.g. PAT-9848)
-- Password and confirm password fields with independent show/hide toggles
-- Terms of Service checkbox with required validation
-- Already have an account? Sign in link
-- Integrated with /auth/register backend endpoint
-
-### Patient Dashboard
-- Sticky header with brand logo, user info, and logout button
-- Tab-based navigation bar with modules for Appointments, Medications, Medical Records, Vitals, Genomics, and Profile
-- AI health summary banner
-- Stats grid showing vitals and health metrics
-- Safety alert component with badge and color-coded styling
-- Health trend chart with metric selector
-- AI insight note below chart
-- Recent activity feed with icons and timestamps
-- Risk assessment section with labeled progress bars
+### Frontend Workflows
+- Role selection, login, forgot password, and account creation flows
+- Modular patient dashboard with views for appointments, medications, medical records, vitals, genomics, and profile
+- Dynamic routing and conditional rendering for role-specific user experiences
 
 ### In Progress
 - Physician dashboard workflows
 - Write/update routes for patient and physician interactions
-- End-to-end live data connection for all dashboard modules
+- End-to-end live data integration across all dashboard modules
 - Improved validation and error handling across API layers

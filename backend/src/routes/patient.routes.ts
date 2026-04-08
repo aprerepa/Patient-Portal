@@ -73,7 +73,7 @@ patientRouter.get("/medications", authenticateToken, async (req, res) => {
         const result = await pool.query(
             `SELECT id, user_id, name, dosage, frequency, prescriber, start_date, end_date, is_active
             FROM medications
-            where user_id = $1
+            WHERE user_id = $1
             ORDER BY is_active DESC, start_date DESC` , 
             [userId]
         );

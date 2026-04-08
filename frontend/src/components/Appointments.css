@@ -437,6 +437,102 @@
     color: rgb(120, 60, 220);
 }
 
+/* Expanded Section */
+.ap-expanded {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1.5px solid rgb(220, 228, 240);
+    margin-top: 4px;
+}
+
+.ap-expanded-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.ap-exp-btn-primary {
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    background: rgb(0, 87, 235);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.ap-exp-btn-primary:hover {
+    background: rgb(9, 83, 211);
+}
+
+.ap-exp-btn-secondary {
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    background: white;
+    color: rgb(15, 20, 40);
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+}
+
+.ap-exp-btn-secondary:hover {
+    border-color: rgb(180, 190, 210);
+}
+
+.ap-exp-btn-cancel {
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    background: white;
+    color: rgb(200, 40, 40);
+    border: 1.5px solid rgb(240, 200, 200);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.ap-exp-btn-cancel:hover {
+    border-color: rgb(200, 40, 40);
+    background: rgb(255, 245, 245);
+}
+
+.ap-prep-tips {
+    margin: 0;
+    font-size: 13px;
+    color: rgb(0, 65, 180);
+    background: rgb(230, 241, 255);
+    padding: 10px 14px;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.ap-past-notes {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: rgb(60, 70, 90);
+    background: rgb(245, 247, 250);
+    padding: 10px 14px;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.ap-past-notes svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: rgb(70, 81, 98);
+}
+
 /* Bottom Row */
 .ap-bottom-row {
     display: grid;

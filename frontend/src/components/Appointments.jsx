@@ -4,11 +4,11 @@ import {
     Calendar, CheckCircle, TrendingUp, Users,
     Sparkles, Clock, MapPin, User, Video,
     FlaskConical, Stethoscope, ChevronRight,
-    Plus, Filter, AlertTriangle, Activity, Brain
+    Plus, Filter, AlertTriangle, Activity, Brain, FileText
 } from "lucide-react";
 
 // TODO: Replace with GET /api/patient/appointments
-const allAppointments = [
+const upcomingAppointments = [
     {
         id: 1,
         type: "in-person",
@@ -18,11 +18,11 @@ const allAppointments = [
         specialty: "Primary Care",
         physicianId: "PHY-4892",
         facility: "HealthUnity Medical Center, Suite 304",
-        date: "2024-12-14",
         displayDate: { month: "Dec", day: "14" },
         time: "10:00 AM",
         duration: 30,
         ai: "Annual checkup on schedule. Consider requesting lipid panel based on family history.",
+        notes: null,
     },
     {
         id: 2,
@@ -33,11 +33,11 @@ const allAppointments = [
         specialty: "Cardiology",
         physicianId: "PHY-3421",
         facility: null,
-        date: "2024-12-19",
         displayDate: { month: "Dec", day: "19" },
         time: "2:30 PM",
         duration: 20,
         ai: "Good progress on BP control. Prepare 7-day BP log for discussion.",
+        notes: null,
     },
     {
         id: 3,
@@ -48,11 +48,11 @@ const allAppointments = [
         specialty: "Laboratory",
         physicianId: "FAC-2891",
         facility: "HealthUnity Lab Center, Building B",
-        date: "2025-01-07",
         displayDate: { month: "Jan", day: "7" },
         time: "9:15 AM",
         duration: 15,
         ai: "Fasting required (8-12 hours). Schedule before 10 AM for best results.",
+        notes: null,
     },
     {
         id: 4,
@@ -63,26 +63,29 @@ const allAppointments = [
         specialty: "Endocrinology",
         physicianId: "PHY-5634",
         facility: "Diabetes Care Clinic, 3rd Floor",
-        date: "2025-01-21",
         displayDate: { month: "Jan", day: "21" },
         time: "11:00 AM",
         duration: 45,
         ai: "Bring glucose monitor data. AI detects improved morning readings.",
+        notes: null,
     },
+];
+
+const pastAppointments = [
     {
         id: 5,
         type: "in-person",
         status: "completed",
-        title: "Cardiology Follow-up",
-        physician: "Dr. James Chen",
-        specialty: "Cardiology",
-        physicianId: "PHY-3421",
-        facility: "Heart & Vascular Center",
-        date: "2024-11-10",
-        displayDate: { month: "Nov", day: "10" },
+        title: "Annual Eye Exam",
+        physician: "Dr. Robert Thompson",
+        specialty: "Ophthalmology",
+        physicianId: "PHY-7823",
+        facility: null,
+        displayDate: { month: "Nov", day: "9" },
         time: "3:00 PM",
         duration: 30,
-        ai: "Holter monitor results reviewed. No arrhythmia detected.",
+        ai: null,
+        notes: "Vision stable. New prescription provided.",
     },
     {
         id: 6,
@@ -93,11 +96,56 @@ const allAppointments = [
         specialty: "Primary Care",
         physicianId: "PHY-4892",
         facility: null,
-        date: "2024-10-22",
-        displayDate: { month: "Oct", day: "22" },
-        time: "11:30 AM",
+        displayDate: { month: "Oct", day: "4" },
+        time: "10:30 AM",
         duration: 20,
-        ai: "Metformin dosage adjusted. Monitor glucose levels for 2 weeks.",
+        ai: null,
+        notes: "Adjusted Lisinopril dosage. Follow up in 3 months.",
+    },
+    {
+        id: 7,
+        type: "lab-work",
+        status: "completed",
+        title: "Comprehensive Metabolic Panel",
+        physician: "HealthUnity Lab Services",
+        specialty: "Laboratory",
+        physicianId: "FAC-2891",
+        facility: null,
+        displayDate: { month: "Sep", day: "17" },
+        time: "1:45 PM",
+        duration: 15,
+        ai: null,
+        notes: "All values within normal range.",
+    },
+    {
+        id: 8,
+        type: "in-person",
+        status: "completed",
+        title: "Skin Cancer Screening",
+        physician: "Dr. Michael Anderson",
+        specialty: "Dermatology",
+        physicianId: "PHY-6129",
+        facility: null,
+        displayDate: { month: "Aug", day: "21" },
+        time: "2:15 PM",
+        duration: 30,
+        ai: null,
+        notes: "No concerning lesions found. Next screening in 1 year.",
+    },
+    {
+        id: 9,
+        type: "in-person",
+        status: "completed",
+        title: "Cardiovascular Risk Assessment",
+        physician: "Dr. James Chen",
+        specialty: "Cardiology",
+        physicianId: "PHY-3421",
+        facility: null,
+        displayDate: { month: "Jul", day: "13" },
+        time: "9:00 AM",
+        duration: 45,
+        ai: null,
+        notes: "Low risk profile. Continue current management plan.",
     },
 ];
 
@@ -172,12 +220,14 @@ const priorityConfig = {
     low:    { className: "ap-priority-low",    label: "LOW" },
 };
 
-function AppointmentCard({ appt }) {
-    const type   = typeConfig[appt.type]   || typeConfig["in-person"];
-    const status = statusConfig[appt.status] || statusConfig["pending"];
+function AppointmentCard({ appt, expandedId, setExpandedId }) {
+    const type     = typeConfig[appt.type]     || typeConfig["in-person"];
+    const status   = statusConfig[appt.status] || statusConfig["pending"];
+    const isExpanded = expandedId === appt.id;
+    const isPast     = appt.status === "completed";
 
     return (
-        <div className="ap-card">
+        <div className="ap-card" onClick={() => setExpandedId(isExpanded ? null : appt.id)}>
             <div className="ap-card-left">
                 <div className="ap-date-badge">
                     <span className="ap-date-month">{appt.displayDate.month}</span>
@@ -187,7 +237,11 @@ function AppointmentCard({ appt }) {
             <div className="ap-card-body">
                 <div className="ap-card-title-row">
                     <h3 className="ap-card-title">{appt.title}</h3>
-                    <ChevronRight size={18} className="ap-card-chevron" />
+                    <ChevronRight
+                        size={18}
+                        className="ap-card-chevron"
+                        style={{ transform: isExpanded ? "rotate(90deg)" : "none", transition: "transform 0.2s" }}
+                    />
                 </div>
                 <div className="ap-card-tags">
                     <span className={`ap-type-tag ${type.className}`}>
@@ -216,10 +270,39 @@ function AppointmentCard({ appt }) {
                         </span>
                     )}
                 </div>
-                {appt.ai && (
+                {appt.ai && !isPast && (
                     <div className="ap-card-ai">
                         <Sparkles size={13} />
                         <span>{appt.ai}</span>
+                    </div>
+                )}
+
+                {isPast && appt.notes && (
+                    <div className="ap-past-notes">
+                        <FileText size={13} />
+                        <span>{appt.notes}</span>
+                    </div>
+                )}
+
+                {/* Expanded Section */}
+                {isExpanded && (
+                    <div className="ap-expanded" onClick={(e) => e.stopPropagation()}>
+                        <div className="ap-expanded-actions">
+                            {!isPast ? <>
+                                <button className="ap-exp-btn-primary">Get Directions</button>
+                                <button className="ap-exp-btn-secondary">Reschedule</button>
+                                <button className="ap-exp-btn-cancel">Cancel</button>
+                            </> : <>
+                                <button className="ap-exp-btn-primary">View Full Notes</button>
+                                <button className="ap-exp-btn-secondary">Schedule Follow-up</button>
+                                <button className="ap-exp-btn-secondary">Download Summary</button>
+                            </>}
+                        </div>
+                        {!isPast && (
+                            <p className="ap-prep-tips">
+                                <strong>Preparation Tips:</strong> Bring your insurance card, photo ID, and list of current medications. Arrive 10 minutes early for check-in.
+                            </p>
+                        )}
                     </div>
                 )}
             </div>
@@ -229,11 +312,9 @@ function AppointmentCard({ appt }) {
 
 function Appointments() {
     const [activeTab, setActiveTab] = useState("upcoming");
+    const [expandedId, setExpandedId] = useState(null);
 
-    const now = new Date();
-    const upcoming = allAppointments.filter(a => new Date(a.date) >= now);
-    const past     = allAppointments.filter(a => new Date(a.date) <  now);
-    const displayed = activeTab === "upcoming" ? upcoming : past;
+    const displayed = activeTab === "upcoming" ? upcomingAppointments : pastAppointments;
 
     return (
         <div className="ap-wrap">
@@ -241,7 +322,7 @@ function Appointments() {
             {/* AI Banner */}
             <div className="ap-ai-banner">
                 <div className="ap-ai-icon">
-                    <Brain size={20} />
+                    <Sparkles size={20} />
                 </div>
                 <div>
                     <h3 className="ap-ai-title">AI Appointment Intelligence</h3>
@@ -353,7 +434,12 @@ function Appointments() {
                         <div className="ap-empty">No appointments found.</div>
                     )}
                     {displayed.map((appt) => (
-                        <AppointmentCard key={appt.id} appt={appt} />
+                        <AppointmentCard
+                            key={appt.id}
+                            appt={appt}
+                            expandedId={expandedId}
+                            setExpandedId={setExpandedId}
+                        />
                     ))}
                 </div>
             </div>

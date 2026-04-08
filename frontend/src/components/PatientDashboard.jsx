@@ -104,12 +104,7 @@ const vitalChartData = [
     { month: "Jun", heartRate: 71, systolicBP: 118 },
 ];
 
-const statCards = [
-    { icon: <FileText size={22} color="rgb(0,87,235)"   />, label: "Total Records",      value: "247",    sub: "Medical documents"     },
-    { icon: <Pill      size={22} color="rgb(0,160,60)"  />, label: "Active Meds",        value: "5",      sub: "Current prescriptions" },
-    { icon: <FlaskConical size={22} color="rgb(120,60,220)" />, label: "Lab Tests",      value: "23",     sub: "Last 12 months"        },
-    { icon: <Calendar  size={22} color="rgb(220,80,40)" />, label: "Next Appointment",   value: "Dec 15", sub: "Dr. Martinez"          },
-];
+
 
 const navTabs = [
     { label: "Dashboard",       icon: <Activity    size={15} /> },
@@ -207,6 +202,10 @@ function PatientDashboard() {
     const navigate = useNavigate();
 
     const [user, setUser] = useState(null);
+    const [activeMedCount, setActiveMedCount] = useState(0);
+    const [records, setRecords] = useState([]);
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -222,9 +221,48 @@ function PatientDashboard() {
                 console.error("Failed to fetch profile:", error);
             }
         };
+
+        const fetchMedications = async () => {
+            try {
+                const token = localStorage.getItem("token");
+                const response = await axios.get("http://localhost:3001/patient/medications", {
+                     headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                setActiveMedCount(response.data.medications.filter(m => m.is_active).length);
+            } catch (error) {
+                console.error("Failed to fetch medications:", error);
+            }
+        };
+
+        const fetchRecords = async () => {
+            try {
+                const token = localStorage.getItem("token");
+                const response = await axios.get("http://localhost:3001/patient/records", {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                setRecords(response.data.medical_records);
+            } catch (error) {
+                console.error("Failed to fetch records:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
         
         fetchProfile();
+        fetchMedications();
+        fetchRecords();
     }, []);
+
+    const statCards = [
+        { icon: <FileText size={22} color="rgb(0,87,235)" />, label: "Total Records", value: records.length, sub: "Medical documents" },
+        { icon: <Pill size={22} color="rgb(0,160,60)" />, label: "Active Meds", value: activeMedCount, sub: "Current prescriptions" },
+        { icon: <FlaskConical size={22} color="rgb(120,60,220)" />, label: "Lab Tests", value: records.filter(r => r.record_type === "lab").length, sub: "Last 12 months" },
+        { icon: <Calendar  size={22} color="rgb(220,80,40)" />, label: "Next Appointment", value: "Dec 15", sub: "Dr. Martinez" },
+    ];
 
     return (
         <div className="pd-page">
@@ -407,7 +445,7 @@ function PatientDashboard() {
 
                 </div>
                 </>}
-                {activeTab === "Medical Records" && <MedicalRecords />}
+                {activeTab === "Medical Records" && <MedicalRecords records={records} loading={loading} />}
                 {activeTab === "Genomics" && <Genomics />}
                 {activeTab === "Insurance" && <Insurance />}
                 {activeTab === "Share Data" && <ShareData />}

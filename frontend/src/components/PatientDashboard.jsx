@@ -194,7 +194,7 @@ function PatientDashboard() {
     const [records, setRecords] = useState([]);
     const [loading, setLoading] = useState(true);
     const [vitals, setVitals] = useState([]);
-
+    const [appointments, setAppointments] = useState([]);
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -253,6 +253,7 @@ function PatientDashboard() {
                     month: new Date(v.recorded_at).toLocaleDateString("en-US", { month: "short" }),
                     heartRate: v.heart_rate,
                     systolicBP: v.systolic_bp,
+                    date: new Date(v.recorded_at),
                 }));
                 setVitals(chartData);
             } catch (error) {
@@ -260,17 +261,40 @@ function PatientDashboard() {
             }
         };
         
+        const fetchAppointments = async () => {
+            try {
+                const token = localStorage.getItem("token");
+                const response = await axios.get("http://localhost:3001/patient/appointments", {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                setAppointments(response.data.appointments);
+            } catch (error) {
+                console.error("Failed to fetch appointments:", error);
+            }
+        };
+        
         fetchProfile();
         fetchMedications();
         fetchRecords();
         fetchVitals();
+        fetchAppointments();
     }, []);
+
+    const monthsBack = chartRange === "Last 3 months" ? 3 : chartRange === "Last 12 months" ? 12 : 6;
+    const cutoff = new Date(new Date().setMonth(new Date().getMonth() - monthsBack));
+    const filteredVitals = vitals.filter(v => v.date >= cutoff);
+
+    const nextAppointment = appointments
+    .filter(a => a.status !== "completed")
+    .sort((a, b) => new Date(a.appointment_date) - new Date(b.appointment_date))[0];
 
     const statCards = [
         { icon: <FileText size={22} color="rgb(0,87,235)" />, label: "Total Records", value: records.length, sub: "Medical documents" },
         { icon: <Pill size={22} color="rgb(0,160,60)" />, label: "Active Meds", value: activeMedCount, sub: "Current prescriptions" },
         { icon: <FlaskConical size={22} color="rgb(120,60,220)" />, label: "Lab Tests", value: records.filter(r => r.record_type === "lab").length, sub: "Last 12 months" },
-        { icon: <Calendar  size={22} color="rgb(220,80,40)" />, label: "Next Appointment", value: "Dec 15", sub: "Dr. Martinez" },
+        { icon: <Calendar  size={22} color="rgb(220,80,40)" />, label: "Next Appointment", value: nextAppointment ? new Date(nextAppointment.appointment_date).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "None", sub: nextAppointment ? nextAppointment.reason : "No upcoming appointments" },
     ];
 
     return (
@@ -390,13 +414,13 @@ function PatientDashboard() {
                             value={chartRange}
                             onChange={(e) => setChartRange(e.target.value)}
                         >
-                            <option>Last 6 months</option>
                             <option>Last 3 months</option>
+                            <option>Last 6 months</option>
                             <option>Last 12 months</option>
                         </select>
                     </div>
-                    {vitals.length > 0 
-                        ? <VitalChart data={vitals} /> 
+                    {filteredVitals.length > 0 
+                        ? <VitalChart data={filteredVitals} /> 
                         : <p className="pd-chart-empty">No vitals data yet.</p>
                     }
                     <div className="pd-ai-note">
@@ -462,7 +486,7 @@ function PatientDashboard() {
                 {activeTab === "Insurance" && <Insurance />}
                 {activeTab === "Share Data" && <ShareData />}
                 {activeTab === "Upload" && <UploadTab />}
-                {activeTab === "Appointments" && <Appointments />}
+                {activeTab === "Appointments" && <Appointments appointments={appointments} />}
             </div>
         </div>
     );

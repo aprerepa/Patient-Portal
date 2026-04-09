@@ -7,148 +7,6 @@ import {
     Plus, Filter, AlertTriangle, Activity, Brain, FileText
 } from "lucide-react";
 
-// TODO: Replace with GET /api/patient/appointments
-const upcomingAppointments = [
-    {
-        id: 1,
-        type: "in-person",
-        status: "confirmed",
-        title: "Annual Physical Examination",
-        physician: "Dr. Elena Martinez",
-        specialty: "Primary Care",
-        physicianId: "PHY-4892",
-        facility: "HealthUnity Medical Center, Suite 304",
-        displayDate: { month: "Dec", day: "14" },
-        time: "10:00 AM",
-        duration: 30,
-        ai: "Annual checkup on schedule. Consider requesting lipid panel based on family history.",
-        notes: null,
-    },
-    {
-        id: 2,
-        type: "telehealth",
-        status: "confirmed",
-        title: "Follow-up: Blood Pressure Management",
-        physician: "Dr. James Chen",
-        specialty: "Cardiology",
-        physicianId: "PHY-3421",
-        facility: null,
-        displayDate: { month: "Dec", day: "19" },
-        time: "2:30 PM",
-        duration: 20,
-        ai: "Good progress on BP control. Prepare 7-day BP log for discussion.",
-        notes: null,
-    },
-    {
-        id: 3,
-        type: "lab-work",
-        status: "pending",
-        title: "Quarterly HbA1c & Lipid Panel",
-        physician: "HealthUnity Lab Services",
-        specialty: "Laboratory",
-        physicianId: "FAC-2891",
-        facility: "HealthUnity Lab Center, Building B",
-        displayDate: { month: "Jan", day: "7" },
-        time: "9:15 AM",
-        duration: 15,
-        ai: "Fasting required (8-12 hours). Schedule before 10 AM for best results.",
-        notes: null,
-    },
-    {
-        id: 4,
-        type: "in-person",
-        status: "pending",
-        title: "Diabetes Management Review",
-        physician: "Dr. Sarah Williams",
-        specialty: "Endocrinology",
-        physicianId: "PHY-5634",
-        facility: "Diabetes Care Clinic, 3rd Floor",
-        displayDate: { month: "Jan", day: "21" },
-        time: "11:00 AM",
-        duration: 45,
-        ai: "Bring glucose monitor data. AI detects improved morning readings.",
-        notes: null,
-    },
-];
-
-const pastAppointments = [
-    {
-        id: 5,
-        type: "in-person",
-        status: "completed",
-        title: "Annual Eye Exam",
-        physician: "Dr. Robert Thompson",
-        specialty: "Ophthalmology",
-        physicianId: "PHY-7823",
-        facility: null,
-        displayDate: { month: "Nov", day: "9" },
-        time: "3:00 PM",
-        duration: 30,
-        ai: null,
-        notes: "Vision stable. New prescription provided.",
-    },
-    {
-        id: 6,
-        type: "telehealth",
-        status: "completed",
-        title: "Medication Review",
-        physician: "Dr. Elena Martinez",
-        specialty: "Primary Care",
-        physicianId: "PHY-4892",
-        facility: null,
-        displayDate: { month: "Oct", day: "4" },
-        time: "10:30 AM",
-        duration: 20,
-        ai: null,
-        notes: "Adjusted Lisinopril dosage. Follow up in 3 months.",
-    },
-    {
-        id: 7,
-        type: "lab-work",
-        status: "completed",
-        title: "Comprehensive Metabolic Panel",
-        physician: "HealthUnity Lab Services",
-        specialty: "Laboratory",
-        physicianId: "FAC-2891",
-        facility: null,
-        displayDate: { month: "Sep", day: "17" },
-        time: "1:45 PM",
-        duration: 15,
-        ai: null,
-        notes: "All values within normal range.",
-    },
-    {
-        id: 8,
-        type: "in-person",
-        status: "completed",
-        title: "Skin Cancer Screening",
-        physician: "Dr. Michael Anderson",
-        specialty: "Dermatology",
-        physicianId: "PHY-6129",
-        facility: null,
-        displayDate: { month: "Aug", day: "21" },
-        time: "2:15 PM",
-        duration: 30,
-        ai: null,
-        notes: "No concerning lesions found. Next screening in 1 year.",
-    },
-    {
-        id: 9,
-        type: "in-person",
-        status: "completed",
-        title: "Cardiovascular Risk Assessment",
-        physician: "Dr. James Chen",
-        specialty: "Cardiology",
-        physicianId: "PHY-3421",
-        facility: null,
-        displayDate: { month: "Jul", day: "13" },
-        time: "9:00 AM",
-        duration: 45,
-        ai: null,
-        notes: "Low risk profile. Continue current management plan.",
-    },
-];
-
 // TODO: Replace with GET /api/patient/appointments AI data
 const aiRecommendations = [
     {
@@ -221,7 +79,7 @@ const priorityConfig = {
 };
 
 function AppointmentCard({ appt, expandedId, setExpandedId }) {
-    const type     = typeConfig[appt.type]     || typeConfig["in-person"];
+    const type = typeConfig[appt.appointment_type] || typeConfig["in-person"];
     const status   = statusConfig[appt.status] || statusConfig["pending"];
     const isExpanded = expandedId === appt.id;
     const isPast     = appt.status === "completed";
@@ -230,13 +88,17 @@ function AppointmentCard({ appt, expandedId, setExpandedId }) {
         <div className="ap-card" onClick={() => setExpandedId(isExpanded ? null : appt.id)}>
             <div className="ap-card-left">
                 <div className="ap-date-badge">
-                    <span className="ap-date-month">{appt.displayDate.month}</span>
-                    <span className="ap-date-day">{appt.displayDate.day}</span>
+                    <span className="ap-date-month">
+                        {new Date(appt.appointment_date).toLocaleDateString("en-US", { month: "short" })}
+                    </span>
+                    <span className="ap-date-day">
+                        {new Date(appt.appointment_date).getDate()}
+                    </span>
                 </div>
             </div>
             <div className="ap-card-body">
                 <div className="ap-card-title-row">
-                    <h3 className="ap-card-title">{appt.title}</h3>
+                    <h3 className="ap-card-title">{appt.reason}</h3>
                     <ChevronRight
                         size={18}
                         className="ap-card-chevron"
@@ -253,18 +115,17 @@ function AppointmentCard({ appt, expandedId, setExpandedId }) {
                 </div>
                 <div className="ap-card-details">
                     <span className="ap-detail">
-                        <Clock size={13} /> {appt.time} ({appt.duration} min)
+                        <Clock size={13} /> {new Date(appt.appointment_date).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })}
                     </span>
                     <span className="ap-detail">
-                        <User size={13} /> {appt.physician} – {appt.specialty}
-                        <span className="ap-physician-id">ID: {appt.physicianId}</span>
+                        <User size={13} /> Physician ID: {appt.physician_health_id}
                     </span>
                     {appt.facility && (
                         <span className="ap-detail">
                             <MapPin size={13} /> {appt.facility}
                         </span>
                     )}
-                    {appt.type === "telehealth" && !appt.facility && (
+                    {appt.appointment_type === "telehealth" && !appt.facility && (
                         <span className="ap-detail">
                             <Video size={13} /> Video Call
                         </span>
@@ -310,11 +171,13 @@ function AppointmentCard({ appt, expandedId, setExpandedId }) {
     );
 }
 
-function Appointments() {
+function Appointments({ appointments }) {
     const [activeTab, setActiveTab] = useState("upcoming");
     const [expandedId, setExpandedId] = useState(null);
 
-    const displayed = activeTab === "upcoming" ? upcomingAppointments : pastAppointments;
+    const upcoming = appointments.filter(a => a.status !== "completed");
+    const past = appointments.filter(a => a.status === "completed");
+    const displayed = activeTab === "upcoming" ? upcoming : past;
 
     return (
         <div className="ap-wrap">
@@ -342,7 +205,7 @@ function Appointments() {
                         <span className="ap-stat-label">Upcoming</span>
                     </div>
                     {/* TODO: Replace with real count */}
-                    <span className="ap-stat-value">4</span>
+                    <span className="ap-stat-value">{appointments.filter(a => a.status !== "completed").length}</span>
                     <span className="ap-stat-sub">Next 6 weeks</span>
                 </div>
                 <div className="ap-stat-card">
@@ -351,7 +214,7 @@ function Appointments() {
                         <span className="ap-stat-label">Completed</span>
                     </div>
                     {/* TODO: Replace with real count */}
-                    <span className="ap-stat-value">5</span>
+                    <span className="ap-stat-value">{appointments.filter(a => a.status === "completed").length}</span>
                     <span className="ap-stat-sub">Last 6 months</span>
                 </div>
                 <div className="ap-stat-card">

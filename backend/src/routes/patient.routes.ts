@@ -91,10 +91,13 @@ patientRouter.get("/appointments", authenticateToken, async (req, res) => {
     try {
         const userId = (req as any).user.userId;
         const result = await pool.query(
-            `SELECT id, patient_id, physician_id, facility, appointment_date, appointment_type, reason, status, notes
-             FROM appointments
-             WHERE patient_id = $1
-             ORDER BY appointment_date DESC`,
+            `SELECT a.id, a.patient_id, a.physician_id, a.facility, a.appointment_date, 
+                a.appointment_type, a.reason, a.status, a.notes,
+                u.health_id as physician_health_id
+            FROM appointments a
+            LEFT JOIN users u ON u.id = a.physician_id
+            WHERE a.patient_id = $1
+            ORDER BY a.appointment_date DESC`,
             [userId]
         );
 

@@ -94,18 +94,6 @@ const recentActivity = [
     },
 ];
 
-// TODO: Replace with GET /api/patient/vitals
-const vitalChartData = [
-    { month: "Jan", heartRate: 71, systolicBP: 120 },
-    { month: "Feb", heartRate: 70, systolicBP: 118 },
-    { month: "Mar", heartRate: 72, systolicBP: 119 },
-    { month: "Apr", heartRate: 71, systolicBP: 119 },
-    { month: "May", heartRate: 70, systolicBP: 117 },
-    { month: "Jun", heartRate: 71, systolicBP: 118 },
-];
-
-
-
 const navTabs = [
     { label: "Dashboard",       icon: <Activity    size={15} /> },
     { label: "Medical Records", icon: <FileText    size={15} /> },
@@ -205,6 +193,7 @@ function PatientDashboard() {
     const [activeMedCount, setActiveMedCount] = useState(0);
     const [records, setRecords] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [vitals, setVitals] = useState([]);
 
 
     useEffect(() => {
@@ -251,10 +240,30 @@ function PatientDashboard() {
                 setLoading(false);
             }
         };
+
+         const fetchVitals = async () => {
+            try {
+                const token = localStorage.getItem("token");
+                const response = await axios.get("http://localhost:3001/patient/vitals", {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                const chartData = response.data.vitals.map(v => ({
+                    month: new Date(v.recorded_at).toLocaleDateString("en-US", { month: "short" }),
+                    heartRate: v.heart_rate,
+                    systolicBP: v.systolic_bp,
+                }));
+                setVitals(chartData);
+            } catch (error) {
+                console.error("Failed to fetch vitals:", error);
+            }
+        };
         
         fetchProfile();
         fetchMedications();
         fetchRecords();
+        fetchVitals();
     }, []);
 
     const statCards = [
@@ -386,7 +395,10 @@ function PatientDashboard() {
                             <option>Last 12 months</option>
                         </select>
                     </div>
-                    <VitalChart data={vitalChartData} />
+                    {vitals.length > 0 
+                        ? <VitalChart data={vitals} /> 
+                        : <p className="pd-chart-empty">No vitals data yet.</p>
+                    }
                     <div className="pd-ai-note">
                         <Sparkles size={14} className="pd-sparkle-purple" />
                         <p>{aiAnalysis}</p>

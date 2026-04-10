@@ -1,0 +1,243 @@
+.mp-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Search Row */
+.mp-search-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1.5px solid rgb(220, 228, 240);
+}
+
+.mp-search-wrap {
+    flex: 1;
+    position: relative;
+}
+
+.mp-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(70, 81, 98);
+    pointer-events: none;
+}
+
+.mp-search {
+    width: 100%;
+    height: 44px;
+    padding: 10px 14px 10px 40px;
+    font-size: 14px;
+    font-family: inherit;
+    background: white;
+    border: 1.5px solid rgb(192, 199, 208);
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+    color: rgb(15, 20, 40);
+    transition: border-color 0.15s;
+}
+
+.mp-search:focus {
+    border-color: rgb(0, 160, 60);
+}
+
+.mp-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    background: white;
+    border: 1.5px solid rgb(192, 199, 208);
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(70, 81, 98);
+    transition: border-color 0.15s;
+    white-space: nowrap;
+    height: 44px;
+}
+
+.mp-filter-btn:hover {
+    border-color: rgb(0, 160, 60);
+    color: rgb(0, 160, 60);
+}
+
+/* Summary Stats */
+.mp-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.mp-stat {
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mp-stat-label {
+    font-size: 13px;
+    color: rgb(70, 81, 98);
+    font-weight: 500;
+}
+
+.mp-stat-value {
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+    line-height: 1;
+}
+
+/* Table */
+.mp-table-wrap {
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.mp-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mp-thead-row {
+    background: rgb(248, 250, 253);
+    border-bottom: 1.5px solid rgb(220, 228, 240);
+}
+
+.mp-th {
+    padding: 12px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(70, 81, 98);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.mp-row {
+    border-bottom: 1px solid rgb(235, 240, 248);
+    transition: background 0.1s;
+    cursor: pointer;
+}
+
+.mp-row:last-child {
+    border-bottom: none;
+}
+
+.mp-row:hover {
+    background: rgb(248, 251, 255);
+}
+
+.mp-td {
+    padding: 14px 18px;
+    font-size: 13px;
+    color: rgb(15, 20, 40);
+    vertical-align: middle;
+}
+
+.mp-empty-row {
+    padding: 40px;
+    text-align: center;
+    color: rgb(100, 110, 130);
+    font-size: 14px;
+}
+
+/* Patient Cell */
+.mp-patient-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mp-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgb(210, 240, 220);
+    color: rgb(0, 140, 55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.mp-patient-name {
+    margin: 0 0 2px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.mp-patient-id {
+    margin: 0;
+    font-size: 12px;
+    color: rgb(100, 110, 130);
+}
+
+.mp-age {
+    margin: 0 0 2px;
+    font-size: 13px;
+    color: rgb(15, 20, 40);
+}
+
+.mp-gender {
+    margin: 0;
+    font-size: 12px;
+}
+
+.mp-muted {
+    color: rgb(150, 160, 175);
+    font-size: 13px;
+}
+
+.mp-date {
+    margin: 0;
+    font-size: 13px;
+    color: rgb(40, 50, 70);
+}
+
+.mp-next-appt {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mp-clock-icon {
+    color: rgb(0, 160, 60);
+    flex-shrink: 0;
+}
+
+/* Status */
+.mp-status {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 6px;
+}
+
+.mp-status-active  { background: rgb(220, 248, 230); color: rgb(0, 120, 45); }
+.mp-status-review  { background: rgb(255, 245, 210); color: rgb(160, 100, 0); }
+.mp-status-pending { background: rgb(230, 235, 255); color: rgb(50, 70, 200); }
+
+/* Empty */
+.mp-empty {
+    text-align: center;
+    padding: 40px;
+    color: rgb(70, 81, 98);
+    font-size: 14px;
+}

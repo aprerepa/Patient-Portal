@@ -112,14 +112,16 @@ function MedicalRecords({ records, loading }) {
                             </div>
                             <p className="mr-card-summary">{r.summary}</p>
                             <AiInsight ai={r.ai} />
-                            <div className="mr-card-actions">
-                                <button className="mr-btn-view">
-                                    <Eye size={14} /> View
-                                </button>
-                                <button className="mr-btn-download">
-                                    <Download size={14} /> Download
-                                </button>
-                            </div>
+                            {r.file_url && (
+                                <div className="mr-card-actions">
+                                    <button className="mr-btn-view">
+                                        <Eye size={14} /> View
+                                    </button>
+                                    <button className="mr-btn-download">
+                                        <Download size={14} /> Download
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     );
                 })}

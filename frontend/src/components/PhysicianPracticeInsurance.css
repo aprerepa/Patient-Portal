@@ -1,0 +1,653 @@
+/* Physician Insurance tab — uses phd-card, phd-stat-card, phd-stat-grid from PhysicianDashboard.css */
+
+.phi-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.phi-stat-sub-green {
+    color: rgb(0, 150, 55) !important;
+}
+
+/* AI assistant banner */
+.phi-ai-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 22px;
+    border-radius: 14px;
+    background: rgb(238, 252, 244);
+    border: 1.5px solid rgb(160, 220, 185);
+}
+
+.phi-ai-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: rgb(0, 160, 60);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.phi-ai-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.phi-ai-title {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgb(0, 95, 45);
+}
+
+.phi-ai-body {
+    margin: 0 0 16px;
+    font-size: 14px;
+    color: rgb(45, 85, 60);
+    line-height: 1.55;
+}
+
+.phi-ai-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.phi-btn-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background: rgb(0, 160, 60);
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.phi-btn-solid:hover {
+    opacity: 0.94;
+}
+
+.phi-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: 1.5px solid rgb(0, 160, 60);
+    background: white;
+    color: rgb(0, 130, 55);
+    cursor: pointer;
+}
+
+.phi-btn-outline:hover {
+    background: rgb(245, 252, 247);
+}
+
+.phi-btn-compact {
+    padding: 9px 16px;
+    font-size: 13px;
+}
+
+/* Section shell */
+.phi-section {
+    padding-bottom: 4px;
+}
+
+.phi-section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+/* Prior authorization cards */
+.phi-pa-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.phi-pa-card {
+    border-radius: 12px;
+    border: 1.5px solid rgb(230, 236, 245);
+    border-left-width: 5px;
+    padding: 18px 20px;
+    background: rgb(252, 253, 255);
+    transition: box-shadow 0.15s ease;
+}
+
+.phi-pa-card:hover {
+    box-shadow: 0 0 0 1px rgba(0, 160, 60, 0.35);
+}
+
+.phi-pa-yellow {
+    border-left-color: rgb(210, 170, 40);
+    background: rgb(255, 252, 238);
+}
+
+.phi-pa-red {
+    border-left-color: rgb(220, 70, 55);
+    background: rgb(255, 246, 246);
+}
+
+.phi-pa-green {
+    border-left-color: rgb(0, 160, 60);
+    background: rgb(246, 252, 248);
+}
+
+.phi-pa-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.phi-pa-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.phi-pa-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.phi-pa-icon-yellow {
+    color: rgb(190, 140, 0);
+}
+
+.phi-pa-icon-red {
+    color: rgb(210, 60, 50);
+}
+
+.phi-pa-icon-green {
+    color: rgb(0, 140, 55);
+}
+
+.phi-pa-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.phi-badge {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.phi-badge-yellow {
+    background: rgb(255, 240, 200);
+    color: rgb(140, 90, 0);
+}
+
+.phi-badge-red {
+    background: rgb(255, 225, 225);
+    color: rgb(180, 40, 40);
+}
+
+.phi-badge-urgent {
+    background: transparent;
+    color: rgb(200, 45, 40);
+    padding-left: 0;
+}
+
+.phi-badge-green {
+    background: rgb(220, 248, 230);
+    color: rgb(0, 120, 45);
+}
+
+.phi-badge-blue {
+    background: rgb(230, 240, 255);
+    color: rgb(0, 87, 200);
+}
+
+.phi-pa-patient {
+    margin: 0 0 4px;
+    font-size: 14px;
+    color: rgb(100, 110, 130);
+}
+
+.phi-pa-meta {
+    margin: 0 0 14px;
+    font-size: 13px;
+    color: rgb(130, 140, 160);
+}
+
+.phi-pa-grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    margin-bottom: 14px;
+}
+
+.phi-pa-dt-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(120, 130, 150);
+    margin-bottom: 4px;
+}
+
+.phi-pa-dt-value {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.phi-pa-ai-inset {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+}
+
+.phi-pa-ai-sparkle {
+    color: rgb(120, 60, 220);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.phi-pa-ai-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(100, 50, 180);
+}
+
+.phi-pa-ai-copy {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: rgb(60, 70, 90);
+    line-height: 1.5;
+}
+
+.phi-pa-footer {
+    margin-top: 14px;
+}
+
+/* Insurance verification */
+.phi-verify-head {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+@media (min-width: 720px) {
+    .phi-verify-head {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+}
+
+.phi-verify-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+@media (min-width: 720px) {
+    .phi-verify-tools {
+        justify-content: flex-end;
+    }
+}
+
+.phi-search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 180px;
+    max-width: 320px;
+}
+
+.phi-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(100, 110, 130);
+    pointer-events: none;
+}
+
+.phi-search {
+    width: 100%;
+    height: 42px;
+    padding: 10px 12px 10px 40px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1.5px solid rgb(192, 199, 208);
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.phi-search:focus {
+    border-color: rgb(0, 160, 60);
+}
+
+.phi-verify-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.phi-verify-card {
+    padding: 18px 18px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 1.5px solid rgb(220, 228, 240);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.phi-verify-card:last-child {
+    margin-bottom: 0;
+}
+
+.phi-verify-card:hover {
+    border-color: rgb(0, 160, 60);
+    box-shadow: 0 0 0 1px rgba(0, 160, 60, 0.1);
+}
+
+.phi-verify-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.phi-verify-name {
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.phi-verify-plan {
+    margin: 0 0 4px;
+    font-size: 14px;
+    color: rgb(100, 110, 130);
+}
+
+.phi-verify-member {
+    margin: 0;
+    font-size: 13px;
+    color: rgb(130, 140, 160);
+}
+
+.phi-verify-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+@media (max-width: 560px) {
+    .phi-verify-metrics {
+        grid-template-columns: 1fr;
+    }
+}
+
+.phi-verify-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgb(235, 242, 255);
+    font-size: 13px;
+    color: rgb(0, 70, 180);
+    line-height: 1.5;
+}
+
+/* Reimbursement */
+.phi-reimb-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.phi-reimb-card {
+    padding: 18px 20px;
+    border-radius: 12px;
+    border: 1.5px solid rgb(220, 228, 240);
+    background: rgb(252, 253, 255);
+}
+
+.phi-reimb-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.phi-reimb-month {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.phi-reimb-rate {
+    text-align: right;
+}
+
+.phi-reimb-rate-val {
+    margin: 4px 0 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(0, 160, 60);
+}
+
+.phi-reimb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px 16px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 640px) {
+    .phi-reimb-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.phi-reimb-val {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.phi-reimb-dark {
+    color: rgb(15, 20, 40);
+}
+
+.phi-reimb-green {
+    color: rgb(0, 150, 55);
+}
+
+.phi-reimb-red {
+    color: rgb(200, 55, 55);
+}
+
+.phi-reimb-orange {
+    color: rgb(200, 120, 30);
+}
+
+.phi-reimb-bar-bg {
+    height: 10px;
+    background: rgb(225, 230, 240);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.phi-reimb-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: rgb(0, 160, 60);
+    transition: width 0.35s ease;
+}
+
+/* Denials */
+.phi-denial-intro {
+    margin: 0 0 16px;
+    font-size: 14px;
+    color: rgb(100, 110, 130);
+    line-height: 1.5;
+}
+
+.phi-denial-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.phi-denial-card {
+    border-radius: 12px;
+    border: 1.5px solid rgb(245, 210, 210);
+    border-left: 5px solid rgb(220, 70, 55);
+    background: rgb(255, 248, 248);
+    padding: 18px 20px;
+}
+
+.phi-denial-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.phi-denial-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.phi-denial-warn-icon {
+    color: rgb(210, 55, 45);
+    flex-shrink: 0;
+}
+
+.phi-denial-service {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.phi-denial-amt {
+    text-align: right;
+}
+
+.phi-denial-price {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(15, 20, 40);
+}
+
+.phi-denial-date {
+    font-size: 12px;
+    color: rgb(120, 130, 150);
+}
+
+.phi-denial-patient {
+    margin: 0 0 4px;
+    font-size: 14px;
+    color: rgb(100, 110, 130);
+}
+
+.phi-denial-claim {
+    margin: 0 0 10px;
+    font-size: 13px;
+    color: rgb(130, 140, 160);
+}
+
+.phi-denial-reason {
+    margin: 0 0 12px;
+    font-size: 13px;
+}
+
+.phi-denial-reason-label {
+    color: rgb(100, 110, 130);
+}
+
+.phi-denial-reason-txt {
+    color: rgb(200, 55, 55);
+    font-weight: 500;
+}
+
+.phi-denial-strategy {
+    display: flex;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    margin-bottom: 14px;
+}
+
+.phi-denial-strat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(100, 50, 180);
+}
+
+.phi-denial-strat-copy {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: rgb(60, 70, 90);
+    line-height: 1.5;
+}
+
+.phi-denial-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.phi-denial-pending {
+    font-size: 13px;
+    color: rgb(100, 110, 130);
+}
+
+.phi-empty-msg {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(100, 110, 130);
+}

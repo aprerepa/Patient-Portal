@@ -1,0 +1,328 @@
+/* AI Clinical Tools — uses phd-card / phd-card-title-row from PhysicianDashboard.css */
+
+.aic-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Decision support banner: default neutral; light green on hover (Figma) */
+.aic-decision-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 14px;
+    padding: 20px 22px;
+    border: 1.5px solid rgb(220, 228, 240);
+    background: white;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.aic-decision-banner:hover {
+    background: rgb(238, 252, 244);
+    border-color: rgb(0, 160, 60);
+}
+
+.aic-decision-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: rgb(0, 160, 60);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.aic-decision-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.aic-decision-title {
+    margin: 0 0 6px;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgb(0, 95, 45);
+}
+
+.aic-decision-body {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(50, 90, 65);
+    line-height: 1.55;
+}
+
+.aic-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+@media (max-width: 900px) {
+    .aic-two-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+.aic-tool-card .phd-card-title-row {
+    margin-bottom: 10px;
+}
+
+.aic-icon-red {
+    color: rgb(200, 55, 55);
+}
+
+.aic-icon-purple {
+    color: rgb(120, 60, 220);
+}
+
+.aic-tool-desc {
+    margin: 0 0 16px;
+    font-size: 14px;
+    color: rgb(100, 110, 130);
+    line-height: 1.5;
+}
+
+.aic-field-label {
+    display: block;
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(70, 81, 98);
+}
+
+.aic-input,
+.aic-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1.5px solid rgb(192, 199, 208);
+    color: rgb(15, 20, 40);
+    background: white;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.aic-input:focus,
+.aic-textarea:focus {
+    border-color: rgb(0, 160, 60);
+}
+
+.aic-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+}
+
+.aic-input {
+    margin-bottom: 16px;
+}
+
+.aic-btn-primary {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background: rgb(0, 160, 60);
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.aic-btn-primary:hover {
+    opacity: 0.94;
+}
+
+.aic-section-card .phd-card-title-row {
+    margin-bottom: 6px;
+}
+
+.aic-section-sub {
+    margin: 0 0 18px;
+    font-size: 14px;
+    color: rgb(100, 110, 130);
+    line-height: 1.5;
+}
+
+/* Guidelines: grey border default; light green + green border on hover */
+.aic-guideline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+@media (max-width: 640px) {
+    .aic-guideline-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.aic-guideline-tile {
+    text-align: left;
+    padding: 16px 18px;
+    border-radius: 12px;
+    border: 1.5px solid rgb(220, 228, 240);
+    background: white;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.aic-guideline-tile:hover {
+    background: rgb(238, 252, 244);
+    border-color: rgb(0, 160, 60);
+}
+
+.aic-guideline-title {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+    margin-bottom: 6px;
+}
+
+.aic-guideline-sub {
+    display: block;
+    font-size: 13px;
+    color: rgb(100, 110, 130);
+}
+
+/* Risk tiles: tinted by theme; stronger border on hover */
+.aic-risk-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+    .aic-risk-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .aic-risk-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.aic-risk-tile {
+    text-align: left;
+    padding: 16px 14px;
+    border-radius: 12px;
+    border: 1.5px solid;
+    cursor: pointer;
+    font-family: inherit;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.aic-risk-tile:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.aic-risk-tile-orange {
+    background: rgb(255, 248, 238);
+    border-color: rgb(235, 190, 140);
+    color: rgb(140, 70, 0);
+}
+
+.aic-risk-tile-orange:hover {
+    border-color: rgb(210, 120, 40);
+}
+
+.aic-risk-tile-blue {
+    background: rgb(235, 242, 255);
+    border-color: rgb(180, 205, 245);
+    color: rgb(0, 60, 160);
+}
+
+.aic-risk-tile-blue:hover {
+    border-color: rgb(0, 87, 235);
+}
+
+.aic-risk-tile-purple {
+    background: rgb(245, 240, 255);
+    border-color: rgb(210, 190, 235);
+    color: rgb(80, 40, 140);
+}
+
+.aic-risk-tile-purple:hover {
+    border-color: rgb(120, 60, 220);
+}
+
+.aic-risk-tile-green {
+    background: rgb(238, 252, 244);
+    border-color: rgb(160, 215, 180);
+    color: rgb(0, 95, 45);
+}
+
+.aic-risk-tile-green:hover {
+    border-color: rgb(0, 160, 60);
+}
+
+.aic-risk-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.aic-risk-sub {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Lab interpretation panel */
+.aic-lab-panel {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 22px;
+    border-radius: 12px;
+    background: rgb(238, 252, 244);
+    border: 1.5px solid rgb(160, 220, 185);
+}
+
+.aic-lab-brain {
+    flex-shrink: 0;
+    color: rgb(0, 130, 55);
+}
+
+.aic-lab-lead {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(0, 95, 45);
+    line-height: 1.55;
+}
+
+.aic-lab-bullets {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13px;
+    color: rgb(35, 85, 55);
+    line-height: 1.6;
+}
+
+.aic-lab-bullets li {
+    margin-bottom: 6px;
+}
+
+.aic-lab-bullets li:last-child {
+    margin-bottom: 0;
+}

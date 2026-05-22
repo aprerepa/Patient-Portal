@@ -1,0 +1,173 @@
+/* Schedule tab — phd-card / phd-schedule-* come from PhysicianDashboard.css */
+
+.phd-tab-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.phd-tab-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 14px;
+    padding: 16px 20px;
+}
+
+.phd-tab-toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.phd-tab-toolbar-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.phd-tab-toolbar-sub {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: rgb(100, 110, 130);
+}
+
+.phd-tab-toolbar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.phd-tab-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+@media (max-width: 1100px) {
+    .phd-tab-week {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .phd-tab-week {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.phd-tab-day {
+    background: white;
+    border: 1.5px solid rgb(220, 228, 240);
+    border-radius: 12px;
+    padding: 12px 12px 14px;
+    min-height: 140px;
+}
+
+.phd-tab-day-muted {
+    opacity: 0.72;
+}
+
+.phd-tab-day-label {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(0, 160, 60);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.phd-tab-day-date {
+    margin: 4px 0 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 20, 40);
+}
+
+.phd-tab-day-count {
+    margin: 0 0 10px;
+    font-size: 12px;
+    color: rgb(120, 130, 150);
+}
+
+.phd-tab-day-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.phd-tab-day-chip {
+    background: rgb(248, 250, 253);
+    border: 1px solid rgb(230, 236, 245);
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+.phd-tab-chip-time {
+    display: block;
+    font-weight: 600;
+    color: rgb(0, 87, 235);
+}
+
+.phd-tab-chip-name {
+    color: rgb(50, 60, 80);
+}
+
+.phd-tab-schedule-wide {
+    align-items: flex-start;
+}
+
+.phd-tab-schedule-loc {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 4px;
+    font-size: 12px;
+    color: rgb(120, 130, 150);
+}
+
+.phd-tab-ghost-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1.5px solid rgb(210, 220, 235);
+    background: white;
+    color: rgb(60, 70, 90);
+    cursor: pointer;
+}
+
+.phd-tab-ghost-btn:hover {
+    background: rgb(248, 250, 253);
+}
+
+.phd-tab-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    background: rgb(0, 160, 60);
+    color: white;
+    cursor: pointer;
+}
+
+.phd-tab-primary-btn:hover {
+    opacity: 0.94;
+}

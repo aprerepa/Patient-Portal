@@ -2,13 +2,17 @@ import "./PhysicianDashboard.css";
 import { useState, useEffect } from "react";
 import {
     Shield, Users, Calendar, FileText, Share2,
-    LogOut, AlertCircle, Sparkles, Activity,
-    Brain, TrendingUp, Clock, CheckCircle,
-    CreditCard, User
+    LogOut, AlertCircle, Activity,
+    Brain, TrendingUp, Clock,
+    CreditCard
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import MyPatients from "./MyPatients";
+import PhysicianSharedAccess from "./PhysicianSharedAccess";
+import PhysicianAIClinical from "./PhysicianAIClinical";
+import PhysicianSchedule from "./PhysicianSchedule";
+import PhysicianPracticeInsurance from "./PhysicianPracticeInsurance";
 
 // ── Mock Data ─────────────────────────────────────────────────────────────────
 
@@ -346,13 +350,10 @@ function PhysicianDashboard() {
 
                 {activeTab === "My Patients" && <MyPatients />}
 
-                {activeTab !== "Dashboard" && activeTab !== "My Patients" && (
-                    <div className="phd-coming-soon">
-                        <Sparkles size={32} color="rgb(0, 160, 60)" />
-                        <h2>Coming Soon</h2>
-                        <p>This section is under construction.</p>
-                    </div>
-                )}
+                {activeTab === "Shared Access" && <PhysicianSharedAccess />}
+                {activeTab === "AI Clinical Tools" && <PhysicianAIClinical />}
+                {activeTab === "Schedule" && <PhysicianSchedule />}
+                {activeTab === "Insurance" && <PhysicianPracticeInsurance />}
 
             </div>
         </div>

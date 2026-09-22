@@ -1,1 +1,5 @@
-{}
+{
+  "dependencies": {
+    "fhirclient": "^3.0.0"
+  }
+}

@@ -1,5 +1,29 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Environment / secrets (never commit)
 .env
-dist
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+frontend/build/
+
+# OS / editor
 .DS_Store
 **/.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Personal career / resume notes (do not commit)
+CAREER_SUMMARY.md
+
+# Synthea large binary (safe to regenerate; do not commit)
+synthea-generator/**/*.jar
+synthea-generator/**/*.jar.*
+
+# Synthea run metadata (not needed for seed)
+synthea-generator/output/metadata/

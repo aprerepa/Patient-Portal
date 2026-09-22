@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 interface JwtPayload {
     userId: number;
-    role: string;
+    email: string;
 }
 
 export function authenticateToken(req: Request, res: Response, next: NextFunction) {

@@ -1,0 +1,2774 @@
+{
+  "resourceType": "Bundle",
+  "type": "batch",
+  "entry": [ {
+    "fullUrl": "urn:uuid:99b95dc6-d353-3bb4-863b-e82de45a262b",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "99b95dc6-d353-3bb4-863b-e82de45a262b",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 13
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "99b95dc6-d353-3bb4-863b-e82de45a262b"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "FARMBROOK INTERNAL MEDICINE INC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2485930575"
+      } ],
+      "address": [ {
+        "line": [ "31500 TELEGRAPH RD" ],
+        "city": "BINGHAM FARMS",
+        "state": "MI",
+        "postalCode": "480254313",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|99b95dc6-d353-3bb4-863b-e82de45a262b"
+    }
+  }, {
+    "fullUrl": "urn:uuid:06f21592-8d86-37ac-9eba-0d763c27e6e6",
+    "resource": {
+      "resourceType": "Location",
+      "id": "06f21592-8d86-37ac-9eba-0d763c27e6e6",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "06f21592-8d86-37ac-9eba-0d763c27e6e6"
+      } ],
+      "status": "active",
+      "name": "FARMBROOK INTERNAL MEDICINE INC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2485930575"
+      } ],
+      "address": {
+        "line": [ "31500 TELEGRAPH RD" ],
+        "city": "BINGHAM FARMS",
+        "state": "MI",
+        "postalCode": "480254313",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.2856414,
+        "latitude": 42.5223475
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "99b95dc6-d353-3bb4-863b-e82de45a262b"
+        },
+        "display": "FARMBROOK INTERNAL MEDICINE INC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|06f21592-8d86-37ac-9eba-0d763c27e6e6"
+    }
+  }, {
+    "fullUrl": "urn:uuid:ff96ba7d-b285-35b6-9b6e-133326fab0e2",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "ff96ba7d-b285-35b6-9b6e-133326fab0e2",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 103
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "ff96ba7d-b285-35b6-9b6e-133326fab0e2"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "ASCENSION MACOMB OAKLAND HOSPITAL",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5865735000"
+      } ],
+      "address": [ {
+        "line": [ "11800 E 12 MILE RD" ],
+        "city": "WARREN",
+        "state": "MI",
+        "postalCode": "480933472",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|ff96ba7d-b285-35b6-9b6e-133326fab0e2"
+    }
+  }, {
+    "fullUrl": "urn:uuid:5505f110-5b6f-3941-8f32-9eee33380732",
+    "resource": {
+      "resourceType": "Location",
+      "id": "5505f110-5b6f-3941-8f32-9eee33380732",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "5505f110-5b6f-3941-8f32-9eee33380732"
+      } ],
+      "status": "active",
+      "name": "ASCENSION MACOMB OAKLAND HOSPITAL",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5865735000"
+      } ],
+      "address": {
+        "line": [ "11800 E 12 MILE RD" ],
+        "city": "WARREN",
+        "state": "MI",
+        "postalCode": "480933472",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.00425969212512,
+        "latitude": 42.5056224
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "ff96ba7d-b285-35b6-9b6e-133326fab0e2"
+        },
+        "display": "ASCENSION MACOMB OAKLAND HOSPITAL"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|5505f110-5b6f-3941-8f32-9eee33380732"
+    }
+  }, {
+    "fullUrl": "urn:uuid:53b26936-db4d-3647-878f-44a1ec004182",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "53b26936-db4d-3647-878f-44a1ec004182",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 4
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "53b26936-db4d-3647-878f-44a1ec004182"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "CLIO URGENT CARE PLLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "8109199416"
+      } ],
+      "address": [ {
+        "line": [ "4272 W VIENNA RD" ],
+        "city": "CLIO",
+        "state": "MI",
+        "postalCode": "484209454",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|53b26936-db4d-3647-878f-44a1ec004182"
+    }
+  }, {
+    "fullUrl": "urn:uuid:af59feb2-de29-30cc-b134-6aff212b44a9",
+    "resource": {
+      "resourceType": "Location",
+      "id": "af59feb2-de29-30cc-b134-6aff212b44a9",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "af59feb2-de29-30cc-b134-6aff212b44a9"
+      } ],
+      "status": "active",
+      "name": "CLIO URGENT CARE PLLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "8109199416"
+      } ],
+      "address": {
+        "line": [ "4272 W VIENNA RD" ],
+        "city": "CLIO",
+        "state": "MI",
+        "postalCode": "484209454",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.7346897,
+        "latitude": 43.1774215
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "53b26936-db4d-3647-878f-44a1ec004182"
+        },
+        "display": "CLIO URGENT CARE PLLC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|af59feb2-de29-30cc-b134-6aff212b44a9"
+    }
+  }, {
+    "fullUrl": "urn:uuid:7cbcf7d7-91cf-361c-82cd-de66f4f0b859",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "7cbcf7d7-91cf-361c-82cd-de66f4f0b859",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 29
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "7cbcf7d7-91cf-361c-82cd-de66f4f0b859"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "ASCENSION MACOMB OAKLAND HOSPITAL",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5865735000"
+      } ],
+      "address": [ {
+        "line": [ "11800 E 12 MILE RD" ],
+        "city": "WARREN",
+        "state": "MI",
+        "postalCode": "480933472",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|7cbcf7d7-91cf-361c-82cd-de66f4f0b859"
+    }
+  }, {
+    "fullUrl": "urn:uuid:dbc36054-497f-379d-9863-5d3787e98bd0",
+    "resource": {
+      "resourceType": "Location",
+      "id": "dbc36054-497f-379d-9863-5d3787e98bd0",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "dbc36054-497f-379d-9863-5d3787e98bd0"
+      } ],
+      "status": "active",
+      "name": "ASCENSION MACOMB OAKLAND HOSPITAL",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5865735000"
+      } ],
+      "address": {
+        "line": [ "11800 E 12 MILE RD" ],
+        "city": "WARREN",
+        "state": "MI",
+        "postalCode": "480933472",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.00425969212512,
+        "latitude": 42.5056224
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "7cbcf7d7-91cf-361c-82cd-de66f4f0b859"
+        },
+        "display": "ASCENSION MACOMB OAKLAND HOSPITAL"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|dbc36054-497f-379d-9863-5d3787e98bd0"
+    }
+  }, {
+    "fullUrl": "urn:uuid:062cfefd-5be7-322d-b7ab-9a308cb7c900",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "062cfefd-5be7-322d-b7ab-9a308cb7c900",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 1
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "062cfefd-5be7-322d-b7ab-9a308cb7c900"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "OAK HEALTH CARE INVESTORS OF COLDWATER, INC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5172799808"
+      } ],
+      "address": [ {
+        "line": [ "90 N MICHIGAN AVE" ],
+        "city": "COLDWATER",
+        "state": "MI",
+        "postalCode": "490361527",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|062cfefd-5be7-322d-b7ab-9a308cb7c900"
+    }
+  }, {
+    "fullUrl": "urn:uuid:8169ea5d-06fb-3c28-9f39-5bb939b7d789",
+    "resource": {
+      "resourceType": "Location",
+      "id": "8169ea5d-06fb-3c28-9f39-5bb939b7d789",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "8169ea5d-06fb-3c28-9f39-5bb939b7d789"
+      } ],
+      "status": "active",
+      "name": "OAK HEALTH CARE INVESTORS OF COLDWATER, INC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5172799808"
+      } ],
+      "address": {
+        "line": [ "90 N MICHIGAN AVE" ],
+        "city": "COLDWATER",
+        "state": "MI",
+        "postalCode": "490361527",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -84.98102413761896,
+        "latitude": 41.94201578811369
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "062cfefd-5be7-322d-b7ab-9a308cb7c900"
+        },
+        "display": "OAK HEALTH CARE INVESTORS OF COLDWATER, INC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|8169ea5d-06fb-3c28-9f39-5bb939b7d789"
+    }
+  }, {
+    "fullUrl": "urn:uuid:7c83970d-dabe-3e15-9902-6d19842ff802",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "7c83970d-dabe-3e15-9902-6d19842ff802",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 58
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 448
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 164
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 110
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "7c83970d-dabe-3e15-9902-6d19842ff802"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "AIRPORT FAMILY PHYSICIANS LLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2486735520"
+      } ],
+      "address": [ {
+        "line": [ "1724 AIRPORT RD" ],
+        "city": "WATERFORD",
+        "state": "MI",
+        "postalCode": "483271390",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|7c83970d-dabe-3e15-9902-6d19842ff802"
+    }
+  }, {
+    "fullUrl": "urn:uuid:b150794e-db1a-3915-927b-e99143ab3376",
+    "resource": {
+      "resourceType": "Location",
+      "id": "b150794e-db1a-3915-927b-e99143ab3376",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "b150794e-db1a-3915-927b-e99143ab3376"
+      } ],
+      "status": "active",
+      "name": "AIRPORT FAMILY PHYSICIANS LLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2486735520"
+      } ],
+      "address": {
+        "line": [ "1724 AIRPORT RD" ],
+        "city": "WATERFORD",
+        "state": "MI",
+        "postalCode": "483271390",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.40598123652494,
+        "latitude": 42.663261445304485
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "7c83970d-dabe-3e15-9902-6d19842ff802"
+        },
+        "display": "AIRPORT FAMILY PHYSICIANS LLC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|b150794e-db1a-3915-927b-e99143ab3376"
+    }
+  }, {
+    "fullUrl": "urn:uuid:d392b572-a472-3a51-a967-bde31ed5849b",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "d392b572-a472-3a51-a967-bde31ed5849b",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 6
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/bed-count-extension",
+        "valueInteger": 108
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "d392b572-a472-3a51-a967-bde31ed5849b"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "LOURDES REHABILITATION AND HEALTHCARE CENTER",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2486742241"
+      } ],
+      "address": [ {
+        "line": [ "2300 WATKINS LAKE RD" ],
+        "city": "WATERFORD",
+        "state": "MI",
+        "postalCode": "483281439",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|d392b572-a472-3a51-a967-bde31ed5849b"
+    }
+  }, {
+    "fullUrl": "urn:uuid:2e150813-14c0-335b-bccb-961a27714031",
+    "resource": {
+      "resourceType": "Location",
+      "id": "2e150813-14c0-335b-bccb-961a27714031",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "2e150813-14c0-335b-bccb-961a27714031"
+      } ],
+      "status": "active",
+      "name": "LOURDES REHABILITATION AND HEALTHCARE CENTER",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2486742241"
+      } ],
+      "address": {
+        "line": [ "2300 WATKINS LAKE RD" ],
+        "city": "WATERFORD",
+        "state": "MI",
+        "postalCode": "483281439",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.35652,
+        "latitude": 42.664767
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "d392b572-a472-3a51-a967-bde31ed5849b"
+        },
+        "display": "LOURDES REHABILITATION AND HEALTHCARE CENTER"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|2e150813-14c0-335b-bccb-961a27714031"
+    }
+  }, {
+    "fullUrl": "urn:uuid:5e5fc941-005c-36cc-ac4b-7e2a1356897e",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "5e5fc941-005c-36cc-ac4b-7e2a1356897e",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 1
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "5e5fc941-005c-36cc-ac4b-7e2a1356897e"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "MEDPOINTE URGENT CARE WALK IN CLINIC PC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "7346522385"
+      } ],
+      "address": [ {
+        "line": [ "31290 GROESBECK HWY" ],
+        "city": "FRASER",
+        "state": "MI",
+        "postalCode": "480262517",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|5e5fc941-005c-36cc-ac4b-7e2a1356897e"
+    }
+  }, {
+    "fullUrl": "urn:uuid:43323d43-2a50-3708-9d2b-496ba9a73cde",
+    "resource": {
+      "resourceType": "Location",
+      "id": "43323d43-2a50-3708-9d2b-496ba9a73cde",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "43323d43-2a50-3708-9d2b-496ba9a73cde"
+      } ],
+      "status": "active",
+      "name": "MEDPOINTE URGENT CARE WALK IN CLINIC PC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "7346522385"
+      } ],
+      "address": {
+        "line": [ "31290 GROESBECK HWY" ],
+        "city": "FRASER",
+        "state": "MI",
+        "postalCode": "480262517",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -82.9446925,
+        "latitude": 42.5263444
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "5e5fc941-005c-36cc-ac4b-7e2a1356897e"
+        },
+        "display": "MEDPOINTE URGENT CARE WALK IN CLINIC PC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|43323d43-2a50-3708-9d2b-496ba9a73cde"
+    }
+  }, {
+    "fullUrl": "urn:uuid:d07ea5b6-0050-3848-b49a-bf76ff356c5b",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "d07ea5b6-0050-3848-b49a-bf76ff356c5b",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 140
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "d07ea5b6-0050-3848-b49a-bf76ff356c5b"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "MCLAREN FLINT",
+      "telecom": [ {
+        "system": "phone",
+        "value": "8103424400"
+      } ],
+      "address": [ {
+        "line": [ "401 S BALLENGER HWY" ],
+        "city": "FLINT",
+        "state": "MI",
+        "postalCode": "485323638",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|d07ea5b6-0050-3848-b49a-bf76ff356c5b"
+    }
+  }, {
+    "fullUrl": "urn:uuid:84727754-7329-39a7-b680-fdc3100bb2fb",
+    "resource": {
+      "resourceType": "Location",
+      "id": "84727754-7329-39a7-b680-fdc3100bb2fb",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "84727754-7329-39a7-b680-fdc3100bb2fb"
+      } ],
+      "status": "active",
+      "name": "MCLAREN FLINT",
+      "telecom": [ {
+        "system": "phone",
+        "value": "8103424400"
+      } ],
+      "address": {
+        "line": [ "401 S BALLENGER HWY" ],
+        "city": "FLINT",
+        "state": "MI",
+        "postalCode": "485323638",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.73261753291786,
+        "latitude": 43.0138518
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "d07ea5b6-0050-3848-b49a-bf76ff356c5b"
+        },
+        "display": "MCLAREN FLINT"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|84727754-7329-39a7-b680-fdc3100bb2fb"
+    }
+  }, {
+    "fullUrl": "urn:uuid:30f026db-ed2b-3dac-9b17-43dd274d4d63",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "30f026db-ed2b-3dac-9b17-43dd274d4d63",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 1
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "30f026db-ed2b-3dac-9b17-43dd274d4d63"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "TRINITY CONTINUING CARE SERVICES",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5862933300"
+      } ],
+      "address": [ {
+        "line": [ "33300 UTICA RD" ],
+        "city": "FRASER",
+        "state": "MI",
+        "postalCode": "480262017",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|30f026db-ed2b-3dac-9b17-43dd274d4d63"
+    }
+  }, {
+    "fullUrl": "urn:uuid:18d5a60d-74cf-3a47-aa29-caba08409a3d",
+    "resource": {
+      "resourceType": "Location",
+      "id": "18d5a60d-74cf-3a47-aa29-caba08409a3d",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "18d5a60d-74cf-3a47-aa29-caba08409a3d"
+      } ],
+      "status": "active",
+      "name": "TRINITY CONTINUING CARE SERVICES",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5862933300"
+      } ],
+      "address": {
+        "line": [ "33300 UTICA RD" ],
+        "city": "FRASER",
+        "state": "MI",
+        "postalCode": "480262017",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -82.95412965100672,
+        "latitude": 42.54130705369128
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "30f026db-ed2b-3dac-9b17-43dd274d4d63"
+        },
+        "display": "TRINITY CONTINUING CARE SERVICES"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|18d5a60d-74cf-3a47-aa29-caba08409a3d"
+    }
+  }, {
+    "fullUrl": "urn:uuid:cb7e2a2b-ee59-31cb-b0d7-46fb481bd958",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "cb7e2a2b-ee59-31cb-b0d7-46fb481bd958",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 9
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/bed-count-extension",
+        "valueInteger": 85
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "cb7e2a2b-ee59-31cb-b0d7-46fb481bd958"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "MEDILODGE OF LANSING",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5173239133"
+      } ],
+      "address": [ {
+        "line": [ "731 STARKWEATHER DR" ],
+        "city": "LANSING",
+        "state": "MI",
+        "postalCode": "489171128",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|cb7e2a2b-ee59-31cb-b0d7-46fb481bd958"
+    }
+  }, {
+    "fullUrl": "urn:uuid:d97d276e-b99c-3f63-899f-3e59fad3678d",
+    "resource": {
+      "resourceType": "Location",
+      "id": "d97d276e-b99c-3f63-899f-3e59fad3678d",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "d97d276e-b99c-3f63-899f-3e59fad3678d"
+      } ],
+      "status": "active",
+      "name": "MEDILODGE OF LANSING",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5173239133"
+      } ],
+      "address": {
+        "line": [ "731 STARKWEATHER DR" ],
+        "city": "LANSING",
+        "state": "MI",
+        "postalCode": "489171128",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -84.65475687429492,
+        "latitude": 42.7430018
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "cb7e2a2b-ee59-31cb-b0d7-46fb481bd958"
+        },
+        "display": "MEDILODGE OF LANSING"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|d97d276e-b99c-3f63-899f-3e59fad3678d"
+    }
+  }, {
+    "fullUrl": "urn:uuid:8445a6bb-b3b8-333a-9896-e2733a28d573",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "8445a6bb-b3b8-333a-9896-e2733a28d573",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 15
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/bed-count-extension",
+        "valueInteger": 330
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "8445a6bb-b3b8-333a-9896-e2733a28d573"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "AUTUMN WOODS RESIDENTIAL HLTH",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5865743444"
+      } ],
+      "address": [ {
+        "line": [ "29800 HOOVER RD" ],
+        "city": "WARREN",
+        "state": "MI",
+        "postalCode": "48093",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|8445a6bb-b3b8-333a-9896-e2733a28d573"
+    }
+  }, {
+    "fullUrl": "urn:uuid:dcd4840f-ebbb-3f47-a476-ff8f7f4a4558",
+    "resource": {
+      "resourceType": "Location",
+      "id": "dcd4840f-ebbb-3f47-a476-ff8f7f4a4558",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "dcd4840f-ebbb-3f47-a476-ff8f7f4a4558"
+      } ],
+      "status": "active",
+      "name": "AUTUMN WOODS RESIDENTIAL HLTH",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5865743444"
+      } ],
+      "address": {
+        "line": [ "29800 HOOVER RD" ],
+        "city": "WARREN",
+        "state": "MI",
+        "postalCode": "48093",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.00703723232323,
+        "latitude": 42.511989303030305
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "8445a6bb-b3b8-333a-9896-e2733a28d573"
+        },
+        "display": "AUTUMN WOODS RESIDENTIAL HLTH"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|dcd4840f-ebbb-3f47-a476-ff8f7f4a4558"
+    }
+  }, {
+    "fullUrl": "urn:uuid:6decae76-7d99-3eaa-b89f-61971cb5ab9f",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "6decae76-7d99-3eaa-b89f-61971cb5ab9f",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 29
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "6decae76-7d99-3eaa-b89f-61971cb5ab9f"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "EDWARD W SPARROW HOSPITAL ASSOCIATION",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5173646000"
+      } ],
+      "address": [ {
+        "line": [ "1210 W. SAGINAW STREET" ],
+        "city": "LANSING",
+        "state": "MI",
+        "postalCode": "489151927",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|6decae76-7d99-3eaa-b89f-61971cb5ab9f"
+    }
+  }, {
+    "fullUrl": "urn:uuid:09e96b39-e254-3988-b166-f790110de1ac",
+    "resource": {
+      "resourceType": "Location",
+      "id": "09e96b39-e254-3988-b166-f790110de1ac",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "09e96b39-e254-3988-b166-f790110de1ac"
+      } ],
+      "status": "active",
+      "name": "EDWARD W SPARROW HOSPITAL ASSOCIATION",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5173646000"
+      } ],
+      "address": {
+        "line": [ "1210 W. SAGINAW STREET" ],
+        "city": "LANSING",
+        "state": "MI",
+        "postalCode": "489151927",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -84.56945438632367,
+        "latitude": 42.74170105
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "6decae76-7d99-3eaa-b89f-61971cb5ab9f"
+        },
+        "display": "EDWARD W SPARROW HOSPITAL ASSOCIATION"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|09e96b39-e254-3988-b166-f790110de1ac"
+    }
+  }, {
+    "fullUrl": "urn:uuid:89e7351a-2911-3da9-93e9-e94646aedc65",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "89e7351a-2911-3da9-93e9-e94646aedc65",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 3
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "89e7351a-2911-3da9-93e9-e94646aedc65"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "ELIZABETH LAKE URGENT CARE PLLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2485611291"
+      } ],
+      "address": [ {
+        "line": [ "2446 ELIZABETH LAKE RD" ],
+        "city": "WATERFORD",
+        "state": "MI",
+        "postalCode": "483283310",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|89e7351a-2911-3da9-93e9-e94646aedc65"
+    }
+  }, {
+    "fullUrl": "urn:uuid:35fd7004-4a05-38e8-9f1a-b8de016ed9be",
+    "resource": {
+      "resourceType": "Location",
+      "id": "35fd7004-4a05-38e8-9f1a-b8de016ed9be",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "35fd7004-4a05-38e8-9f1a-b8de016ed9be"
+      } ],
+      "status": "active",
+      "name": "ELIZABETH LAKE URGENT CARE PLLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2485611291"
+      } ],
+      "address": {
+        "line": [ "2446 ELIZABETH LAKE RD" ],
+        "city": "WATERFORD",
+        "state": "MI",
+        "postalCode": "483283310",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.33608017263732,
+        "latitude": 42.6398103209558
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "89e7351a-2911-3da9-93e9-e94646aedc65"
+        },
+        "display": "ELIZABETH LAKE URGENT CARE PLLC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|35fd7004-4a05-38e8-9f1a-b8de016ed9be"
+    }
+  }, {
+    "fullUrl": "urn:uuid:53924d4f-b0b0-32ca-99d9-029c5eda1eb1",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "53924d4f-b0b0-32ca-99d9-029c5eda1eb1",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 1
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "53924d4f-b0b0-32ca-99d9-029c5eda1eb1"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "URGENT CARE PLUS PC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5867794550"
+      } ],
+      "address": [ {
+        "line": [ "16184 E 10 MILE RD STE 102" ],
+        "city": "EASTPOINTE",
+        "state": "MI",
+        "postalCode": "480211160",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|53924d4f-b0b0-32ca-99d9-029c5eda1eb1"
+    }
+  }, {
+    "fullUrl": "urn:uuid:51f5872a-9f8e-3a70-a755-c2d82c47dea1",
+    "resource": {
+      "resourceType": "Location",
+      "id": "51f5872a-9f8e-3a70-a755-c2d82c47dea1",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "51f5872a-9f8e-3a70-a755-c2d82c47dea1"
+      } ],
+      "status": "active",
+      "name": "URGENT CARE PLUS PC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5867794550"
+      } ],
+      "address": {
+        "line": [ "16184 E 10 MILE RD STE 102" ],
+        "city": "EASTPOINTE",
+        "state": "MI",
+        "postalCode": "480211160",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -82.95539914285715,
+        "latitude": 42.479522
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "53924d4f-b0b0-32ca-99d9-029c5eda1eb1"
+        },
+        "display": "URGENT CARE PLUS PC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|51f5872a-9f8e-3a70-a755-c2d82c47dea1"
+    }
+  }, {
+    "fullUrl": "urn:uuid:8ab90138-50de-3d0b-b8ad-4da6797972e6",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "8ab90138-50de-3d0b-b8ad-4da6797972e6",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 37
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 180
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 60
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 13
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "8ab90138-50de-3d0b-b8ad-4da6797972e6"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "SEXTON HEALTH CENTER",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5178874467"
+      } ],
+      "address": [ {
+        "line": [ "102 MCPHERSON AVE" ],
+        "city": "LANSING",
+        "state": "MI",
+        "postalCode": "489151760",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|8ab90138-50de-3d0b-b8ad-4da6797972e6"
+    }
+  }, {
+    "fullUrl": "urn:uuid:2ec4522c-254a-3637-85b6-6e599bf82602",
+    "resource": {
+      "resourceType": "Location",
+      "id": "2ec4522c-254a-3637-85b6-6e599bf82602",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "2ec4522c-254a-3637-85b6-6e599bf82602"
+      } ],
+      "status": "active",
+      "name": "SEXTON HEALTH CENTER",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5178874467"
+      } ],
+      "address": {
+        "line": [ "102 MCPHERSON AVE" ],
+        "city": "LANSING",
+        "state": "MI",
+        "postalCode": "489151760",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -84.57483008163265,
+        "latitude": 42.73367443877551
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "8ab90138-50de-3d0b-b8ad-4da6797972e6"
+        },
+        "display": "SEXTON HEALTH CENTER"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|2ec4522c-254a-3637-85b6-6e599bf82602"
+    }
+  }, {
+    "fullUrl": "urn:uuid:d1fada22-6397-3c78-99cd-c1d82761ede8",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "d1fada22-6397-3c78-99cd-c1d82761ede8",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 101
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/bed-count-extension",
+        "valueInteger": 162
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "d1fada22-6397-3c78-99cd-c1d82761ede8"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "BCA STONECREST CENTER",
+      "telecom": [ {
+        "system": "phone",
+        "value": "3132450600"
+      } ],
+      "address": [ {
+        "line": [ "15000 GRATIOT AVENUE" ],
+        "city": "DETROIT",
+        "state": "MI",
+        "postalCode": "482051973",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|d1fada22-6397-3c78-99cd-c1d82761ede8"
+    }
+  }, {
+    "fullUrl": "urn:uuid:dc16fc0e-4178-3f41-8d65-f322460f5327",
+    "resource": {
+      "resourceType": "Location",
+      "id": "dc16fc0e-4178-3f41-8d65-f322460f5327",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "dc16fc0e-4178-3f41-8d65-f322460f5327"
+      } ],
+      "status": "active",
+      "name": "BCA STONECREST CENTER",
+      "telecom": [ {
+        "system": "phone",
+        "value": "3132450600"
+      } ],
+      "address": {
+        "line": [ "15000 GRATIOT AVENUE" ],
+        "city": "DETROIT",
+        "state": "MI",
+        "postalCode": "482051973",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -82.97118893764198,
+        "latitude": 42.4434624
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "d1fada22-6397-3c78-99cd-c1d82761ede8"
+        },
+        "display": "BCA STONECREST CENTER"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|dc16fc0e-4178-3f41-8d65-f322460f5327"
+    }
+  }, {
+    "fullUrl": "urn:uuid:fe3b24da-e9ef-3fc5-8730-d7e3aa56044e",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "fe3b24da-e9ef-3fc5-8730-d7e3aa56044e",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 39
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 245
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 53
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 12
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "fe3b24da-e9ef-3fc5-8730-d7e3aa56044e"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "PRIMARY HEALTHCARE MICHIGAN PLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "8106862212"
+      } ],
+      "address": [ {
+        "line": [ "5092 W VIENNA RD STE G" ],
+        "city": "CLIO",
+        "state": "MI",
+        "postalCode": "484202804",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|fe3b24da-e9ef-3fc5-8730-d7e3aa56044e"
+    }
+  }, {
+    "fullUrl": "urn:uuid:06dd19a1-5909-3695-bc6f-e7b50708c941",
+    "resource": {
+      "resourceType": "Location",
+      "id": "06dd19a1-5909-3695-bc6f-e7b50708c941",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "06dd19a1-5909-3695-bc6f-e7b50708c941"
+      } ],
+      "status": "active",
+      "name": "PRIMARY HEALTHCARE MICHIGAN PLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "8106862212"
+      } ],
+      "address": {
+        "line": [ "5092 W VIENNA RD STE G" ],
+        "city": "CLIO",
+        "state": "MI",
+        "postalCode": "484202804",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.7346897,
+        "latitude": 43.1774215
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "fe3b24da-e9ef-3fc5-8730-d7e3aa56044e"
+        },
+        "display": "PRIMARY HEALTHCARE MICHIGAN PLC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|06dd19a1-5909-3695-bc6f-e7b50708c941"
+    }
+  }, {
+    "fullUrl": "urn:uuid:b6068a24-296a-3990-a97f-d899bf46caf8",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "b6068a24-296a-3990-a97f-d899bf46caf8",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 45
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 455
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 133
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 50
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "b6068a24-296a-3990-a97f-d899bf46caf8"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "PRIME MEDICAL HEALTH CARE PC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5867794550"
+      } ],
+      "address": [ {
+        "line": [ "16184 E 10 MILE RD STE 101" ],
+        "city": "EASTPOINTE",
+        "state": "MI",
+        "postalCode": "480211160",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|b6068a24-296a-3990-a97f-d899bf46caf8"
+    }
+  }, {
+    "fullUrl": "urn:uuid:9113d84a-fdd8-3520-93b3-09f30d8716d2",
+    "resource": {
+      "resourceType": "Location",
+      "id": "9113d84a-fdd8-3520-93b3-09f30d8716d2",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "9113d84a-fdd8-3520-93b3-09f30d8716d2"
+      } ],
+      "status": "active",
+      "name": "PRIME MEDICAL HEALTH CARE PC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5867794550"
+      } ],
+      "address": {
+        "line": [ "16184 E 10 MILE RD STE 101" ],
+        "city": "EASTPOINTE",
+        "state": "MI",
+        "postalCode": "480211160",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -82.95539914285715,
+        "latitude": 42.479522
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "b6068a24-296a-3990-a97f-d899bf46caf8"
+        },
+        "display": "PRIME MEDICAL HEALTH CARE PC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|9113d84a-fdd8-3520-93b3-09f30d8716d2"
+    }
+  }, {
+    "fullUrl": "urn:uuid:6b69759c-79bd-3777-b89b-ff7612725df1",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "6b69759c-79bd-3777-b89b-ff7612725df1",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 2
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "6b69759c-79bd-3777-b89b-ff7612725df1"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "CANTERBURY HEALTH CARE, INC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2486749292"
+      } ],
+      "address": [ {
+        "line": [ "5601 HATCHERY RD" ],
+        "city": "WATERFORD",
+        "state": "MI",
+        "postalCode": "483293451",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|6b69759c-79bd-3777-b89b-ff7612725df1"
+    }
+  }, {
+    "fullUrl": "urn:uuid:2045c4ce-a84a-3cc6-bd62-fa9805aea586",
+    "resource": {
+      "resourceType": "Location",
+      "id": "2045c4ce-a84a-3cc6-bd62-fa9805aea586",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "2045c4ce-a84a-3cc6-bd62-fa9805aea586"
+      } ],
+      "status": "active",
+      "name": "CANTERBURY HEALTH CARE, INC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2486749292"
+      } ],
+      "address": {
+        "line": [ "5601 HATCHERY RD" ],
+        "city": "WATERFORD",
+        "state": "MI",
+        "postalCode": "483293451",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.39844638213788,
+        "latitude": 42.67458911220093
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "6b69759c-79bd-3777-b89b-ff7612725df1"
+        },
+        "display": "CANTERBURY HEALTH CARE, INC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|2045c4ce-a84a-3cc6-bd62-fa9805aea586"
+    }
+  }, {
+    "fullUrl": "urn:uuid:2f0b449b-a283-37fa-91d2-420e236e6d8e",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "2f0b449b-a283-37fa-91d2-420e236e6d8e",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 1
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "2f0b449b-a283-37fa-91d2-420e236e6d8e"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "HENRY FORD HEALTH SYSTEM",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5862769555"
+      } ],
+      "address": [ {
+        "line": [ "33464 SCHOENHERR RD" ],
+        "city": "STERLING HEIGHTS",
+        "state": "MI",
+        "postalCode": "483126319",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|2f0b449b-a283-37fa-91d2-420e236e6d8e"
+    }
+  }, {
+    "fullUrl": "urn:uuid:3b161599-12bb-3667-8df8-40c6cf6056a3",
+    "resource": {
+      "resourceType": "Location",
+      "id": "3b161599-12bb-3667-8df8-40c6cf6056a3",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "3b161599-12bb-3667-8df8-40c6cf6056a3"
+      } ],
+      "status": "active",
+      "name": "HENRY FORD HEALTH SYSTEM",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5862769555"
+      } ],
+      "address": {
+        "line": [ "33464 SCHOENHERR RD" ],
+        "city": "STERLING HEIGHTS",
+        "state": "MI",
+        "postalCode": "483126319",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -82.989236304,
+        "latitude": 42.541933736
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "2f0b449b-a283-37fa-91d2-420e236e6d8e"
+        },
+        "display": "HENRY FORD HEALTH SYSTEM"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|3b161599-12bb-3667-8df8-40c6cf6056a3"
+    }
+  }, {
+    "fullUrl": "urn:uuid:f0805290-ab91-3849-b97c-4339ab0c8176",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "f0805290-ab91-3849-b97c-4339ab0c8176",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 54
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 298
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 101
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 18
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "f0805290-ab91-3849-b97c-4339ab0c8176"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "HILLSDALE COMMUNITY HEALTH CENTER",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5173303000"
+      } ],
+      "address": [ {
+        "line": [ "535 MARSHALL ST" ],
+        "city": "LITCHFIELD",
+        "state": "MI",
+        "postalCode": "492529145",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|f0805290-ab91-3849-b97c-4339ab0c8176"
+    }
+  }, {
+    "fullUrl": "urn:uuid:682dfe1a-d406-3596-b7af-12de5cd0d030",
+    "resource": {
+      "resourceType": "Location",
+      "id": "682dfe1a-d406-3596-b7af-12de5cd0d030",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "682dfe1a-d406-3596-b7af-12de5cd0d030"
+      } ],
+      "status": "active",
+      "name": "HILLSDALE COMMUNITY HEALTH CENTER",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5173303000"
+      } ],
+      "address": {
+        "line": [ "535 MARSHALL ST" ],
+        "city": "LITCHFIELD",
+        "state": "MI",
+        "postalCode": "492529145",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -84.7591546,
+        "latitude": 42.0447753
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "f0805290-ab91-3849-b97c-4339ab0c8176"
+        },
+        "display": "HILLSDALE COMMUNITY HEALTH CENTER"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|682dfe1a-d406-3596-b7af-12de5cd0d030"
+    }
+  }, {
+    "fullUrl": "urn:uuid:6dd4b772-d7f0-3bdf-9d66-09d548fdc930",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "6dd4b772-d7f0-3bdf-9d66-09d548fdc930",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 8
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "6dd4b772-d7f0-3bdf-9d66-09d548fdc930"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "OAKLAWN MEDICAL GROUP HOMER",
+      "telecom": [ {
+        "system": "phone",
+        "value": "6167898814"
+      } ],
+      "address": [ {
+        "line": [ "420 SOUTH HILLSDALE" ],
+        "city": "HOMER",
+        "state": "MI",
+        "postalCode": "492451248",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|6dd4b772-d7f0-3bdf-9d66-09d548fdc930"
+    }
+  }, {
+    "fullUrl": "urn:uuid:7ceaad31-98ee-32f5-bd51-044a5d20107d",
+    "resource": {
+      "resourceType": "Location",
+      "id": "7ceaad31-98ee-32f5-bd51-044a5d20107d",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "7ceaad31-98ee-32f5-bd51-044a5d20107d"
+      } ],
+      "status": "active",
+      "name": "OAKLAWN MEDICAL GROUP HOMER",
+      "telecom": [ {
+        "system": "phone",
+        "value": "6167898814"
+      } ],
+      "address": {
+        "line": [ "420 SOUTH HILLSDALE" ],
+        "city": "HOMER",
+        "state": "MI",
+        "postalCode": "492451248",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -84.80874732653061,
+        "latitude": 42.14269583673469
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "6dd4b772-d7f0-3bdf-9d66-09d548fdc930"
+        },
+        "display": "OAKLAWN MEDICAL GROUP HOMER"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|7ceaad31-98ee-32f5-bd51-044a5d20107d"
+    }
+  }, {
+    "fullUrl": "urn:uuid:b6c61ec9-0de0-3110-b65a-5e43118a611f",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "b6c61ec9-0de0-3110-b65a-5e43118a611f",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 48
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 512
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 110
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 36
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "b6c61ec9-0de0-3110-b65a-5e43118a611f"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "INTERNAL MEDICINE AT HOME PLLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5865635555"
+      } ],
+      "address": [ {
+        "line": [ "17000 E 10 MILE RD" ],
+        "city": "EASTPOINTE",
+        "state": "MI",
+        "postalCode": "480211263",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|b6c61ec9-0de0-3110-b65a-5e43118a611f"
+    }
+  }, {
+    "fullUrl": "urn:uuid:54f4d1ca-bbdc-3887-a83d-60a68d877585",
+    "resource": {
+      "resourceType": "Location",
+      "id": "54f4d1ca-bbdc-3887-a83d-60a68d877585",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "54f4d1ca-bbdc-3887-a83d-60a68d877585"
+      } ],
+      "status": "active",
+      "name": "INTERNAL MEDICINE AT HOME PLLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5865635555"
+      } ],
+      "address": {
+        "line": [ "17000 E 10 MILE RD" ],
+        "city": "EASTPOINTE",
+        "state": "MI",
+        "postalCode": "480211263",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -82.94636,
+        "latitude": 42.479624
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "b6c61ec9-0de0-3110-b65a-5e43118a611f"
+        },
+        "display": "INTERNAL MEDICINE AT HOME PLLC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|54f4d1ca-bbdc-3887-a83d-60a68d877585"
+    }
+  }, {
+    "fullUrl": "urn:uuid:74c43584-000a-3223-8303-dbd4a158a27d",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "74c43584-000a-3223-8303-dbd4a158a27d",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 1
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "74c43584-000a-3223-8303-dbd4a158a27d"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "RHEMA-ROSEVILLE OPERATING LLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5867736022"
+      } ],
+      "address": [ {
+        "line": [ "25375 KELLY RD" ],
+        "city": "ROSEVILLE",
+        "state": "MI",
+        "postalCode": "480664960",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|74c43584-000a-3223-8303-dbd4a158a27d"
+    }
+  }, {
+    "fullUrl": "urn:uuid:35e026e5-d8ac-325d-b7af-4520a55b0318",
+    "resource": {
+      "resourceType": "Location",
+      "id": "35e026e5-d8ac-325d-b7af-4520a55b0318",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "35e026e5-d8ac-325d-b7af-4520a55b0318"
+      } ],
+      "status": "active",
+      "name": "RHEMA-ROSEVILLE OPERATING LLC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5867736022"
+      } ],
+      "address": {
+        "line": [ "25375 KELLY RD" ],
+        "city": "ROSEVILLE",
+        "state": "MI",
+        "postalCode": "480664960",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -82.9274954476678,
+        "latitude": 42.48294312451626
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "74c43584-000a-3223-8303-dbd4a158a27d"
+        },
+        "display": "RHEMA-ROSEVILLE OPERATING LLC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|35e026e5-d8ac-325d-b7af-4520a55b0318"
+    }
+  }, {
+    "fullUrl": "urn:uuid:dbd40689-c1b0-3e1c-8e05-5a5054abe7d8",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "dbd40689-c1b0-3e1c-8e05-5a5054abe7d8",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 44
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "dbd40689-c1b0-3e1c-8e05-5a5054abe7d8"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "OAKLAWN HOSPITAL",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2697893921"
+      } ],
+      "address": [ {
+        "line": [ "200 N MADISON ST" ],
+        "city": "TEKONSHA",
+        "state": "MI",
+        "postalCode": "490929261",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|dbd40689-c1b0-3e1c-8e05-5a5054abe7d8"
+    }
+  }, {
+    "fullUrl": "urn:uuid:1f1c2758-d3f5-3c45-9fd7-057868f603a5",
+    "resource": {
+      "resourceType": "Location",
+      "id": "1f1c2758-d3f5-3c45-9fd7-057868f603a5",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "1f1c2758-d3f5-3c45-9fd7-057868f603a5"
+      } ],
+      "status": "active",
+      "name": "OAKLAWN HOSPITAL",
+      "telecom": [ {
+        "system": "phone",
+        "value": "2697893921"
+      } ],
+      "address": {
+        "line": [ "200 N MADISON ST" ],
+        "city": "TEKONSHA",
+        "state": "MI",
+        "postalCode": "490929261",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -84.9858051,
+        "latitude": 42.0933791
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "dbd40689-c1b0-3e1c-8e05-5a5054abe7d8"
+        },
+        "display": "OAKLAWN HOSPITAL"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|1f1c2758-d3f5-3c45-9fd7-057868f603a5"
+    }
+  }, {
+    "fullUrl": "urn:uuid:49883ec4-f87c-3cae-bcda-61322448f6b0",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "49883ec4-f87c-3cae-bcda-61322448f6b0",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 2
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "49883ec4-f87c-3cae-bcda-61322448f6b0"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "BOSWORTH URGENT CARE PC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5173392100"
+      } ],
+      "address": [ {
+        "line": [ "1881 W GRAND RIVER AVE" ],
+        "city": "OKEMOS",
+        "state": "MI",
+        "postalCode": "488641840",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|49883ec4-f87c-3cae-bcda-61322448f6b0"
+    }
+  }, {
+    "fullUrl": "urn:uuid:0a130885-7232-3990-aa21-25e879c54d66",
+    "resource": {
+      "resourceType": "Location",
+      "id": "0a130885-7232-3990-aa21-25e879c54d66",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "0a130885-7232-3990-aa21-25e879c54d66"
+      } ],
+      "status": "active",
+      "name": "BOSWORTH URGENT CARE PC",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5173392100"
+      } ],
+      "address": {
+        "line": [ "1881 W GRAND RIVER AVE" ],
+        "city": "OKEMOS",
+        "state": "MI",
+        "postalCode": "488641840",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -84.41707,
+        "latitude": 42.719672
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "49883ec4-f87c-3cae-bcda-61322448f6b0"
+        },
+        "display": "BOSWORTH URGENT CARE PC"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|0a130885-7232-3990-aa21-25e879c54d66"
+    }
+  }, {
+    "fullUrl": "urn:uuid:fa4f9f45-d56d-38d2-9956-4feba5c0f955",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "fa4f9f45-d56d-38d2-9956-4feba5c0f955",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 58
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/bed-count-extension",
+        "valueInteger": 36
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "fa4f9f45-d56d-38d2-9956-4feba5c0f955"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "SELECT SPECIALTY HOSPITAL-MACOMB COUNTY",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5863079000"
+      } ],
+      "address": [ {
+        "line": [ "215 NORTH AVE, SUITE 200" ],
+        "city": "PONTIAC",
+        "state": "MI",
+        "postalCode": "483411601",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|fa4f9f45-d56d-38d2-9956-4feba5c0f955"
+    }
+  }, {
+    "fullUrl": "urn:uuid:b14ee536-0570-3987-9ed4-ff7b1677bb75",
+    "resource": {
+      "resourceType": "Location",
+      "id": "b14ee536-0570-3987-9ed4-ff7b1677bb75",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "b14ee536-0570-3987-9ed4-ff7b1677bb75"
+      } ],
+      "status": "active",
+      "name": "SELECT SPECIALTY HOSPITAL-MACOMB COUNTY",
+      "telecom": [ {
+        "system": "phone",
+        "value": "5863079000"
+      } ],
+      "address": {
+        "line": [ "215 NORTH AVE, SUITE 200" ],
+        "city": "PONTIAC",
+        "state": "MI",
+        "postalCode": "483411601",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.30880196864472,
+        "latitude": 42.64127539645508
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "fa4f9f45-d56d-38d2-9956-4feba5c0f955"
+        },
+        "display": "SELECT SPECIALTY HOSPITAL-MACOMB COUNTY"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|b14ee536-0570-3987-9ed4-ff7b1677bb75"
+    }
+  }, {
+    "fullUrl": "urn:uuid:ee915468-abd3-3a29-b872-c44467c2e8d3",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "ee915468-abd3-3a29-b872-c44467c2e8d3",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" ]
+      },
+      "extension": [ {
+        "url": "http://synthetichealth.github.io/synthea/utilization-encounters-extension",
+        "valueInteger": 9
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-procedures-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-labs-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/utilization-prescriptions-extension",
+        "valueInteger": 0
+      }, {
+        "url": "http://synthetichealth.github.io/synthea/bed-count-extension",
+        "valueInteger": 151
+      } ],
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "ee915468-abd3-3a29-b872-c44467c2e8d3"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov",
+          "display": "Healthcare Provider"
+        } ],
+        "text": "Healthcare Provider"
+      } ],
+      "name": "MAPLE WOODS MANOR",
+      "telecom": [ {
+        "system": "phone",
+        "value": "8106862600"
+      } ],
+      "address": [ {
+        "line": [ "13137 NORTH CLIO ROAD" ],
+        "city": "CLIO",
+        "state": "MI",
+        "postalCode": "48420",
+        "country": "US"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|ee915468-abd3-3a29-b872-c44467c2e8d3"
+    }
+  }, {
+    "fullUrl": "urn:uuid:8d89c898-bf61-3b5e-bee4-82f40a6d0dcc",
+    "resource": {
+      "resourceType": "Location",
+      "id": "8d89c898-bf61-3b5e-bee4-82f40a6d0dcc",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" ]
+      },
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "8d89c898-bf61-3b5e-bee4-82f40a6d0dcc"
+      } ],
+      "status": "active",
+      "name": "MAPLE WOODS MANOR",
+      "telecom": [ {
+        "system": "phone",
+        "value": "8106862600"
+      } ],
+      "address": {
+        "line": [ "13137 NORTH CLIO ROAD" ],
+        "city": "CLIO",
+        "state": "MI",
+        "postalCode": "48420",
+        "country": "US"
+      },
+      "position": {
+        "longitude": -83.7346897,
+        "latitude": 43.1774215
+      },
+      "managingOrganization": {
+        "identifier": {
+          "system": "https://github.com/synthetichealth/synthea",
+          "value": "ee915468-abd3-3a29-b872-c44467c2e8d3"
+        },
+        "display": "MAPLE WOODS MANOR"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|8d89c898-bf61-3b5e-bee4-82f40a6d0dcc"
+    }
+  }, {
+    "fullUrl": "urn:uuid:bb1ad573-19b8-9cd8-68fb-0e6f684df992",
+    "resource": {
+      "resourceType": "Location",
+      "id": "bb1ad573-19b8-9cd8-68fb-0e6f684df992",
+      "identifier": [ {
+        "system": "https://github.com/synthetichealth/synthea",
+        "value": "bb1ad573-19b8-9cd8-68fb-0e6f684df992"
+      } ],
+      "status": "active",
+      "description": "Patient's Home",
+      "mode": "kind",
+      "physicalType": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+          "code": "ho",
+          "display": "House"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Location",
+      "ifNoneExist": "identifier=https://github.com/synthetichealth/synthea|bb1ad573-19b8-9cd8-68fb-0e6f684df992"
+    }
+  } ]
+}

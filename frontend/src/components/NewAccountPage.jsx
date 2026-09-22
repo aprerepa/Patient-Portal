@@ -34,13 +34,12 @@ function NewAccountPage() {
 
         try {
             const response = await axios.post("http://localhost:3001/auth/register", {
-                firstName,
-                lastName,
                 email,
                 password,
                 role,
-                dateOfBirth,
-                phone
+                firstName,
+                lastName,
+                birthDate: dateOfBirth,
             });
         
             localStorage.setItem("token", response.data.token);

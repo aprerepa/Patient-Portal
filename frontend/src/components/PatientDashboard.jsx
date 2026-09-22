@@ -16,6 +16,7 @@ import UploadTab from "./Upload";
 import Appointments from "./Appointments";
 
 
+
 // ── Mock Data (swap these out when your AI API is ready) ──────────────────────
 
 const patient = {
@@ -197,6 +198,7 @@ function PatientDashboard() {
     const [appointments, setAppointments] = useState([]);
 
     useEffect(() => {
+        // TODO: Wire medications / records / vitals / appointments via FHIR (not Postgres)
         const fetchProfile = async () => {
             try {
                 const token = localStorage.getItem("token");
@@ -208,78 +210,12 @@ function PatientDashboard() {
                 setUser(response.data.user);
             } catch (error) {
                 console.error("Failed to fetch profile:", error);
-            }
-        };
-
-        const fetchMedications = async () => {
-            try {
-                const token = localStorage.getItem("token");
-                const response = await axios.get("http://localhost:3001/patient/medications", {
-                     headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-                setActiveMedCount(response.data.medications.filter(m => m.is_active).length);
-            } catch (error) {
-                console.error("Failed to fetch medications:", error);
-            }
-        };
-
-        const fetchRecords = async () => {
-            try {
-                const token = localStorage.getItem("token");
-                const response = await axios.get("http://localhost:3001/patient/records", {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-                setRecords(response.data.medical_records);
-            } catch (error) {
-                console.error("Failed to fetch records:", error);
             } finally {
                 setLoading(false);
             }
         };
 
-         const fetchVitals = async () => {
-            try {
-                const token = localStorage.getItem("token");
-                const response = await axios.get("http://localhost:3001/patient/vitals", {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-                const chartData = response.data.vitals.map(v => ({
-                    month: new Date(v.recorded_at).toLocaleDateString("en-US", { month: "short" }),
-                    heartRate: v.heart_rate,
-                    systolicBP: v.systolic_bp,
-                    date: new Date(v.recorded_at),
-                }));
-                setVitals(chartData);
-            } catch (error) {
-                console.error("Failed to fetch vitals:", error);
-            }
-        };
-        
-        const fetchAppointments = async () => {
-            try {
-                const token = localStorage.getItem("token");
-                const response = await axios.get("http://localhost:3001/patient/appointments", {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-                setAppointments(response.data.appointments);
-            } catch (error) {
-                console.error("Failed to fetch appointments:", error);
-            }
-        };
-        
         fetchProfile();
-        fetchMedications();
-        fetchRecords();
-        fetchVitals();
-        fetchAppointments();
     }, []);
 
     const monthsBack = chartRange === "Last 3 months" ? 3 : chartRange === "Last 12 months" ? 12 : 6;
@@ -311,11 +247,21 @@ function PatientDashboard() {
                 </div>
                 <div className="pd-header-right">
                     <div className="pd-header-userinfo">
-                        <p className="pd-header-name">{user ? `${user.first_name} ${user.last_name}` : "Loading..."}</p>
+                        <p className="pd-header-name">
+                            {user
+                                ? (user.first_name && user.last_name
+                                    ? `${user.first_name} ${user.last_name}`
+                                    : user.email)
+                                : "Loading..."}
+                        </p>
                         <p className="pd-header-id">Patient ID: {user ? user.health_id : ""}</p>
                     </div>
                     <div className="pd-header-avatar">
-                        {user ? `${user.first_name[0]}${user.last_name[0]}` : ""}
+                        {user
+                            ? (user.first_name && user.last_name
+                                ? `${user.first_name[0]}${user.last_name[0]}`
+                                : user.email?.[0]?.toUpperCase())
+                            : ""}
                     </div>
                     <button className="pd-header-logout" onClick={() =>  {
                         localStorage.removeItem("token");

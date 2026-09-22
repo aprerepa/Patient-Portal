@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  fhir-server:
+    image: hapiproject/hapi:v6.10.0
+    container_name: portal-fhir-server
+    ports:
+      - "8080:8080"
+    environment:
+      - hapi.fhir.database.type=H2
+      - hapi.fhir.fhir_version=R4
+    volumes:
+      - fhir_data:/data
+    restart: unless-stopped
+volumes:
+  fhir_data:

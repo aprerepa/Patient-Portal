@@ -186,12 +186,12 @@ function PhysicianDashboard() {
                 <div className="phd-header-right">
                     <div className="phd-header-userinfo">
                         <p className="phd-header-name">
-                            {user ? `Dr. ${user.first_name} ${user.last_name}` : "Loading..."}
+                            {user ? user.email : "Loading..."}
                         </p>
                         <p className="phd-header-id">ID: {user ? user.health_id : ""}</p>
                     </div>
                     <div className="phd-header-avatar">
-                        {user ? `${user.first_name[0]}${user.last_name[0]}` : ""}
+                        {user ? user.email?.[0]?.toUpperCase() : ""}
                     </div>
                     <button className="phd-header-logout" onClick={() => {
                         localStorage.removeItem("token");

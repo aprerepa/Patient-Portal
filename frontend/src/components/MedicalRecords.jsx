@@ -107,7 +107,12 @@ function MedicalRecords({ records, loading }) {
                                             {new Date(r.record_date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
                                         </span>
                                     </div>
-                                    <p className="mr-card-provider">{r.provider} · {r.facility}</p>
+                                    <p className="mr-card-provider">
+                                        {[r.provider, r.facility]
+                                            .filter((part) => part && part !== "—")
+                                            .filter((part, i, arr) => arr.indexOf(part) === i)
+                                            .join(" · ")}
+                                    </p>
                                 </div>
                             </div>
                             <p className="mr-card-summary">{r.summary}</p>

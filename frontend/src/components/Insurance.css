@@ -114,15 +114,33 @@
     gap: 24px;
 }
 
+.ins-provider-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ins-provider-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
 .ins-provider-name {
-    margin: 0 0 4px;
+    margin: 0 0 2px;
     font-size: 18px;
     font-weight: 500;
     color: rgb(15, 20, 40);
 }
 
 .ins-plan-name {
-    margin: 0 0 16px;
+    margin: 0;
     font-size: 14px;
     color: rgb(70, 81, 98);
 }
@@ -453,6 +471,7 @@
 .ins-download-btn:hover { border-color: rgb(0, 87, 235); color: rgb(0, 87, 235); }
 
 .ins-id-card {
+    /* background set inline per insurer theme; BCBS blue is the default fallback */
     background: linear-gradient(135deg, rgb(0, 87, 235), rgb(30, 60, 200));
     border-radius: 14px;
     padding: 24px 28px;
@@ -460,6 +479,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    transition: background 0.2s ease;
 }
 
 .ins-id-card-top {

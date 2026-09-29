@@ -196,31 +196,47 @@ function PatientDashboard() {
     const [loading, setLoading] = useState(true);
     const [vitals, setVitals] = useState([]);
     const [appointments, setAppointments] = useState([]);
+    const [insurance, setInsurance] = useState(null);
 
     useEffect(() => {
-        // TODO: Wire medications / records / vitals / appointments via FHIR (not Postgres)
-        const fetchProfile = async () => {
+        const token = localStorage.getItem("token");
+        const headers = { Authorization: `Bearer ${token}` };
+
+        const fetchAll = async () => {
             try {
-                const token = localStorage.getItem("token");
-                const response = await axios.get("http://localhost:3001/patient/profile", {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-                setUser(response.data.user);
+                const [profileRes, vitalsRes, recordsRes, medsRes, apptsRes, insuranceRes] =
+                    await Promise.all([
+                        axios.get("http://localhost:3001/patient/profile", { headers }),
+                        axios.get("http://localhost:3001/patient/vitals", { headers }),
+                        axios.get("http://localhost:3001/patient/records", { headers }),
+                        axios.get("http://localhost:3001/patient/medications", { headers }),
+                        axios.get("http://localhost:3001/patient/appointments", { headers }),
+                        axios.get("http://localhost:3001/patient/insurance", { headers }),
+                    ]);
+
+                setUser(profileRes.data.user);
+                setVitals(vitalsRes.data.vitals || []);
+                setRecords(recordsRes.data.medical_records || []);
+                setAppointments(apptsRes.data.appointments || []);
+                setInsurance(insuranceRes.data || null);
+
+                const meds = medsRes.data.medications || [];
+                setActiveMedCount(
+                    meds.filter((m) => m.isActive || m.is_active).length
+                );
             } catch (error) {
-                console.error("Failed to fetch profile:", error);
+                console.error("Failed to load patient dashboard data:", error);
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchProfile();
+        fetchAll();
     }, []);
 
     const monthsBack = chartRange === "Last 3 months" ? 3 : chartRange === "Last 12 months" ? 12 : 6;
     const cutoff = new Date(new Date().setMonth(new Date().getMonth() - monthsBack));
-    const filteredVitals = vitals.filter(v => v.date >= cutoff);
+    const filteredVitals = vitals.filter((v) => new Date(v.date) >= cutoff);
 
     const nextAppointment = appointments
     .filter(a => a.status !== "completed")
@@ -429,7 +445,7 @@ function PatientDashboard() {
                 </>}
                 {activeTab === "Medical Records" && <MedicalRecords records={records} loading={loading} />}
                 {activeTab === "Genomics" && <Genomics />}
-                {activeTab === "Insurance" && <Insurance />}
+                {activeTab === "Insurance" && <Insurance insurance={insurance} loading={loading} />}
                 {activeTab === "Share Data" && <ShareData />}
                 {activeTab === "Upload" && <UploadTab />}
                 {activeTab === "Appointments" && <Appointments appointments={appointments} />}

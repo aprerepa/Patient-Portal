@@ -2,31 +2,17 @@ import "./Insurance.css";
 import {
     Shield, DollarSign, TrendingUp, FileText, CheckCircle,
     AlertTriangle, Sparkles, CreditCard, Download, MessageSquare,
-    Send, Bot
+    Send, Bot, Landmark, Medal, Heart, Trees, HeartHandshake,
+    CircleOff, Building2, Plus
 } from "lucide-react";
 
-// TODO: Replace with GET /api/patient/insurance
-
-const coverage = {
-    provider: "Blue Cross Blue Shield",
-    plan: "Gold PPO Plan",
-    policyNumber: "BCBS-847291034",
-    memberId: "MEM-2847",
-    groupNumber: "GRP-50847",
-    coveragePeriod: "2023 Plan Year",
-    copays: [
-        { label: "Primary Care Visit:", amount: "$25" },
-        { label: "Specialist Visit:", amount: "$50" },
-        { label: "Emergency Room:", amount: "$250" },
-    ],
-};
-
+// Not available from Synthea FHIR — kept as demo UI only
 const deductible = {
     annual: 1500,
     met: 850,
     remaining: 650,
     pct: 57,
-    ai: "AI predicts you'll meet your deductible by February 2025 based on scheduled appointments.",
+    ai: "Deductible details are not present in Synthea claims data. This section remains demo-only.",
 };
 
 const outOfPocket = {
@@ -34,123 +20,183 @@ const outOfPocket = {
     met: 2340,
     remaining: 3660,
     pct: 39,
-    ai: "You're at 39% of your maximum. Good news - you're unlikely to reach the limit this year.",
+    ai: "Out-of-pocket maximums are not present in Synthea claims data. This section remains demo-only.",
 };
-
-const claims = [
-    {
-        id: "CLM-2024-1847",
-        title: "Annual Physical Examination",
-        provider: "Dr. Emily Martinez",
-        status: "Processed",
-        statusColor: "green",
-        icon: "check",
-        billed: "$385.00",
-        covered: "$310.00",
-        youPay: "$75.00",
-        ai: "Claim processed successfully. Payment reflects in-network rates with 20% coinsurance.",
-        aiAction: null,
-    },
-    {
-        id: "CLM-2024-1789",
-        title: "Complete Blood Count (CBC)",
-        provider: "Quest Diagnostics",
-        status: "Processed",
-        statusColor: "green",
-        icon: "check",
-        billed: "$125.00",
-        covered: "$100.00",
-        youPay: "$25.00",
-        ai: "Standard lab test covered at 80%. Consider using in-network lab for better coverage.",
-        aiAction: null,
-    },
-    {
-        id: "CLM-2024-1654",
-        title: "Chest X-Ray",
-        provider: "Valley Imaging Center",
-        status: "Denied",
-        statusColor: "red",
-        icon: "warn",
-        billed: "$450.00",
-        covered: "$0.00",
-        youPay: "$450.00",
-        ai: "Claim denied due to lack of prior authorization. AI-generated appeal letter available.",
-        aiAction: "Generate AI Appeal Letter",
-    },
-];
 
 const preAuths = [
     {
-        title: "MRI Brain with Contrast",
-        id: "PA-2024-489",
-        provider: "Advanced Imaging Associates",
-        status: "Approved",
-        statusColor: "green",
-        requestDate: "12/4/2024",
-        decisionLabel: "Valid Until",
-        decisionDate: "1/4/2025",
-        ai: "Auto-approved based on APOE ε4 genetic risk and clinical history.",
-        aiColor: "purple",
-    },
-    {
-        title: "Physical Therapy (12 sessions)",
-        id: "PA-2024-502",
-        provider: "Metro Physical Therapy",
-        status: "Pending",
+        title: "Prior authorization demo",
+        id: "PA-DEMO",
+        provider: "Not available from FHIR",
+        status: "Demo",
         statusColor: "yellow",
-        requestDate: "12/7/2024",
-        decisionLabel: "Expected Decision",
-        decisionDate: "12/11/2024",
-        ai: "AI predicts 95% approval probability based on diagnosis code and treatment plan.",
+        requestDate: "—",
+        decisionLabel: "Note",
+        decisionDate: "Synthea has no PA resources",
+        ai: "Pre-authorizations are not included in the current FHIR dataset.",
         aiColor: "purple",
     },
 ];
 
-const predictedCosts = [
+/** Brand themes keyed by Synthea payer display names (+ common aliases). */
+const INSURER_THEMES = [
     {
-        title: "Quarterly Lab Work",
-        expected: "2025-01-15",
-        estCost: "$220",
-        coverage: "$176",
-        youPay: "$44",
-        ai: "Deductible already met - only 20% coinsurance applies.",
+        match: [/blue\s*cross/i, /bcbs/i, /anthem/i],
+        key: "bcbs",
+        icon: Shield,
+        // Blue Cross Blue Shield — blue shield / blue card
+        color: "rgb(0, 87, 235)",
+        gradient: "linear-gradient(135deg, rgb(0, 87, 235), rgb(30, 60, 200))",
     },
     {
-        title: "Specialist Follow-up",
-        expected: "2024-12-20",
-        estCost: "$285",
-        coverage: "$235",
-        youPay: "$50",
-        ai: "Use in-network specialist to avoid additional fees.",
+        match: [/medicaid/i],
+        key: "medicaid",
+        icon: Landmark,
+        color: "rgb(0, 128, 128)",
+        gradient: "linear-gradient(135deg, rgb(0, 128, 128), rgb(0, 90, 100))",
+    },
+    {
+        match: [/medicare/i],
+        key: "medicare",
+        icon: Medal,
+        color: "rgb(185, 28, 28)",
+        gradient: "linear-gradient(135deg, rgb(185, 28, 28), rgb(127, 29, 29))",
+    },
+    {
+        match: [/united\s*health/i, /^uhc$/i],
+        key: "uhc",
+        icon: HeartHandshake,
+        color: "rgb(0, 51, 102)",
+        gradient: "linear-gradient(135deg, rgb(0, 70, 130), rgb(0, 40, 80))",
+    },
+    {
+        match: [/humana/i],
+        key: "humana",
+        icon: Heart,
+        color: "rgb(0, 140, 70)",
+        gradient: "linear-gradient(135deg, rgb(0, 140, 70), rgb(0, 90, 50))",
+    },
+    {
+        match: [/cigna/i],
+        key: "cigna",
+        icon: Trees,
+        color: "rgb(232, 119, 34)",
+        gradient: "linear-gradient(135deg, rgb(232, 119, 34), rgb(180, 70, 20))",
+    },
+    {
+        match: [/aetna/i],
+        key: "aetna",
+        icon: Building2,
+        color: "rgb(112, 48, 160)",
+        gradient: "linear-gradient(135deg, rgb(112, 48, 160), rgb(70, 25, 110))",
+    },
+    {
+        match: [/kaiser/i],
+        key: "kaiser",
+        icon: Plus,
+        color: "rgb(0, 96, 175)",
+        gradient: "linear-gradient(135deg, rgb(0, 96, 175), rgb(0, 60, 120))",
+    },
+    {
+        match: [/no[_\s-]?insurance/i, /uninsured/i, /self[-\s]?pay/i],
+        key: "none",
+        icon: CircleOff,
+        color: "rgb(100, 116, 139)",
+        gradient: "linear-gradient(135deg, rgb(100, 116, 139), rgb(71, 85, 105))",
     },
 ];
 
-function Insurance() {
+const DEFAULT_THEME = {
+    key: "default",
+    icon: CreditCard,
+    color: "rgb(55, 65, 145)",
+    gradient: "linear-gradient(135deg, rgb(55, 65, 145), rgb(35, 40, 100))",
+};
+
+function getInsurerTheme(provider) {
+    const name = String(provider || "");
+    for (const theme of INSURER_THEMES) {
+        if (theme.match.some((re) => re.test(name))) {
+            return theme;
+        }
+    }
+    return DEFAULT_THEME;
+}
+
+function formatClaimDate(date) {
+    if (!date) return "";
+    return new Date(date).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+    });
+}
+
+function Insurance({ insurance, loading }) {
+    const coverage = insurance?.coverage || {
+        provider: "Loading…",
+        plan: "—",
+        policyNumber: "—",
+        memberId: "—",
+        groupNumber: "—",
+        coveragePeriod: "—",
+        copays: [],
+    };
+    const claims = insurance?.claims || [];
+    const summary = insurance?.summary || {
+        claimCount: 0,
+        totalBilled: "$0.00",
+        totalPaid: "$0.00",
+        totalYouPay: "$0.00",
+    };
+
+    const theme = getInsurerTheme(coverage.provider);
+    const InsurerIcon = theme.icon;
+
+    if (loading && !insurance) {
+        return <div className="ins-wrap"><p className="ins-section-sub">Loading insurance…</p></div>;
+    }
+
     return (
         <div className="ins-wrap">
 
-            {/* AI Assistant Banner */}
             <div className="ins-ai-banner">
                 <div className="ins-ai-icon"><Bot size={25} /></div>
                 <div className="ins-ai-content">
                     <p className="ins-ai-title">AI Insurance Assistant</p>
-                    <p className="ins-ai-body">Your AI assistant has reviewed your insurance coverage and claims. You have one claim denial that may be successfully appealed. Your deductible is 57% met, and you're on track for optimal coverage utilization. Ask me anything about your coverage, claims, or costs.</p>
+                    <p className="ins-ai-body">
+                        Loaded {summary.claimCount} claims from your health record.
+                        Primary payer: {coverage.provider}. Total billed {summary.totalBilled};
+                        remitted {summary.totalPaid}; estimated patient responsibility {summary.totalYouPay}.
+                        Deductible and prior-auth details are not available in this FHIR dataset.
+                    </p>
                     <button className="ins-ai-btn">
                         <MessageSquare size={14} /> Chat with Insurance Assistant
                     </button>
                 </div>
             </div>
 
-            {/* Current Coverage */}
             <div className="ins-card">
                 <div className="ins-section-title-row">
-                    <Shield size={20} className="ins-blue-icon" />
+                    <InsurerIcon size={20} style={{ color: theme.color }} />
                     <h2 className="ins-section-title">Current Coverage</h2>
                 </div>
                 <div className="ins-coverage-grid">
                     <div className="ins-coverage-left">
-                        <p className="ins-provider-name">{coverage.provider}</p>
-                        <p className="ins-plan-name">{coverage.plan}</p>
+                        <div className="ins-provider-row">
+                            <span
+                                className="ins-provider-badge"
+                                style={{ background: theme.color }}
+                            >
+                                <InsurerIcon size={16} />
+                            </span>
+                            <div>
+                                <p className="ins-provider-name" style={{ color: theme.color }}>
+                                    {coverage.provider}
+                                </p>
+                                <p className="ins-plan-name">{coverage.plan}</p>
+                            </div>
+                        </div>
                         <div className="ins-coverage-fields">
                             <div className="ins-field-row">
                                 <span className="ins-field-label">Policy Number:</span>
@@ -171,20 +217,27 @@ function Insurance() {
                         </div>
                     </div>
                     <div className="ins-coverage-right">
-                        <p className="ins-copay-title">Copay Amounts</p>
-                        {coverage.copays.map((c, i) => (
-                            <div key={i} className="ins-copay-row">
-                                <span className="ins-copay-label">{c.label}</span>
-                                <span className="ins-copay-amount">{c.amount}</span>
-                            </div>
-                        ))}
+                        <p className="ins-copay-title">Claims snapshot</p>
+                        <div className="ins-copay-row">
+                            <span className="ins-copay-label">Claims on file:</span>
+                            <span className="ins-copay-amount">{summary.claimCount}</span>
+                        </div>
+                        <div className="ins-copay-row">
+                            <span className="ins-copay-label">Total billed:</span>
+                            <span className="ins-copay-amount">{summary.totalBilled}</span>
+                        </div>
+                        <div className="ins-copay-row">
+                            <span className="ins-copay-label">Total remitted:</span>
+                            <span className="ins-copay-amount">{summary.totalPaid}</span>
+                        </div>
+                        <p className="ins-section-sub" style={{ marginTop: 12 }}>
+                            Copay tables are not present in Synthea FHIR data.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            {/* Deductible + OOP */}
             <div className="ins-two-col">
-                {/* Deductible */}
                 <div className="ins-card">
                     <div className="ins-section-title-row">
                         <DollarSign size={20} className="ins-green-icon" />
@@ -207,7 +260,6 @@ function Insurance() {
                     </div>
                 </div>
 
-                {/* Out of Pocket */}
                 <div className="ins-card">
                     <div className="ins-section-title-row">
                         <TrendingUp size={20} className="ins-purple-icon" />
@@ -231,16 +283,18 @@ function Insurance() {
                 </div>
             </div>
 
-            {/* Recent Claims */}
             <div className="ins-card">
                 <div className="ins-section-title-row">
                     <FileText size={20} className="ins-blue-icon" />
                     <h2 className="ins-section-title">Recent Claims</h2>
-                    <button className="ins-view-all">View All Claims</button>
+                    <button className="ins-view-all">{claims.length} total</button>
                 </div>
                 <div className="ins-claims">
-                    {claims.map((c, i) => (
-                        <div key={i} className={`ins-claim ins-claim-${c.statusColor}`}>
+                    {claims.length === 0 && (
+                        <p className="ins-section-sub">No claims found in FHIR.</p>
+                    )}
+                    {claims.slice(0, 12).map((c) => (
+                        <div key={c.id} className={`ins-claim ins-claim-${c.statusColor}`}>
                             <div className="ins-claim-header">
                                 <div className="ins-claim-left">
                                     {c.icon === "check"
@@ -248,7 +302,12 @@ function Insurance() {
                                         : <AlertTriangle size={20} className="ins-red-icon" />}
                                     <div>
                                         <p className="ins-claim-title">{c.title}</p>
-                                        <p className="ins-claim-sub">{c.id} · {c.provider}</p>
+                                        <p className="ins-claim-sub">
+                                            {c.id}
+                                            {c.date ? ` · ${formatClaimDate(c.date)}` : ""}
+                                            {` · ${c.provider}`}
+                                            {c.payer ? ` · ${c.payer}` : ""}
+                                        </p>
                                     </div>
                                 </div>
                                 <span className={`ins-status-badge ins-status-${c.statusColor}`}>{c.status}</span>
@@ -281,7 +340,6 @@ function Insurance() {
                 </div>
             </div>
 
-            {/* Pre-Authorizations */}
             <div className="ins-card">
                 <div className="ins-section-title-row">
                     <FileText size={20} className="ins-purple-icon" />
@@ -316,59 +374,21 @@ function Insurance() {
                 </div>
             </div>
 
-            {/* Predicted Costs */}
             <div className="ins-card">
                 <div className="ins-section-title-row">
-                    <CreditCard size={20} className="ins-green-icon" />
-                    <h2 className="ins-section-title">Predicted Healthcare Costs</h2>
-                </div>
-                <p className="ins-section-sub">AI-powered cost predictions based on your scheduled appointments and treatment plans.</p>
-                <div className="ins-predicted">
-                    {predictedCosts.map((p, i) => (
-                        <div key={i} className="ins-predicted-item">
-                            <div>
-                                <p className="ins-preauth-title">{p.title}</p>
-                                <p className="ins-preauth-sub">Expected: {p.expected}</p>
-                            </div>
-                            <div className="ins-claim-amounts">
-                                <div>
-                                    <p className="ins-amount-label">Est. Cost</p>
-                                    <p className="ins-amount-value">{p.estCost}</p>
-                                </div>
-                                <div>
-                                    <p className="ins-amount-label">Coverage</p>
-                                    <p className="ins-amount-value">{p.coverage}</p>
-                                </div>
-                                <div>
-                                    <p className="ins-amount-label">You Pay</p>
-                                    <p className="ins-amount-value">{p.youPay}</p>
-                                </div>
-                            </div>
-                            <div className="ins-claim-ai ins-ai-blue">
-                                <Sparkles size={13} className="ins-blue-icon" />
-                                <span>{p.ai}</span>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Digital Insurance Card */}
-            <div className="ins-card">
-                <div className="ins-section-title-row">
-                    <CreditCard size={20} className="ins-blue-icon" />
+                    <CreditCard size={20} style={{ color: theme.color }} />
                     <h2 className="ins-section-title">Digital Insurance Card</h2>
                     <button className="ins-download-btn">
                         <Download size={14} /> Download Card
                     </button>
                 </div>
-                <div className="ins-id-card">
+                <div className="ins-id-card" style={{ background: theme.gradient }}>
                     <div className="ins-id-card-top">
                         <div>
                             <p className="ins-id-provider">{coverage.provider}</p>
                             <p className="ins-id-plan">{coverage.plan}</p>
                         </div>
-                        <Shield size={32} className="ins-id-shield" />
+                        <InsurerIcon size={32} className="ins-id-shield" />
                     </div>
                     <div className="ins-id-card-bottom">
                         <div>

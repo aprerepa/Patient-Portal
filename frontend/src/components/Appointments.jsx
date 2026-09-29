@@ -29,36 +29,58 @@ const aiRecommendations = [
     },
 ];
 
-// TODO: Replace with GET /api/patient/appointments care team data
-const careTeam = [
-    {
-        id: 1,
-        name: "Dr. Elena Martinez",
-        specialty: "Primary Care",
-        physicianId: "PHY-4892",
-        lastVisit: "Nov 10",
-        nextVisit: "Dec 15",
-        color: "blue",
-    },
-    {
-        id: 2,
-        name: "Dr. James Chen",
-        specialty: "Cardiology",
-        physicianId: "PHY-3421",
-        lastVisit: "Jul 14",
-        nextVisit: "Dec 20",
-        color: "red",
-    },
-    {
-        id: 3,
-        name: "Dr. Sarah Williams",
-        specialty: "Endocrinology",
-        physicianId: "PHY-5634",
-        lastVisit: null,
-        nextVisit: "Jan 22",
-        color: "green",
-    },
-];
+const CARE_TEAM_COLORS = ["blue", "red", "green", "purple", "orange"];
+
+function buildCareTeam(appointments) {
+    const byPhysician = new Map();
+
+    for (const appt of appointments) {
+        if (!appt.physician_health_id || !appt.physician_name) continue;
+
+        const key = appt.physician_health_id;
+        const existing = byPhysician.get(key) || {
+            id: key,
+            name: appt.physician_name,
+            physicianId: appt.physician_health_id,
+            specialty: appt.facility || "Care provider",
+            lastVisit: null,
+            nextVisit: null,
+            _lastVisitAt: null,
+            _nextVisitAt: null,
+            color: CARE_TEAM_COLORS[byPhysician.size % CARE_TEAM_COLORS.length],
+        };
+
+        const when = appt.appointment_date ? new Date(appt.appointment_date) : null;
+        if (when && !Number.isNaN(when.getTime())) {
+            const label = when.toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+            });
+
+            if (appt.status === "completed") {
+                if (!existing._lastVisitAt || when > existing._lastVisitAt) {
+                    existing._lastVisitAt = when;
+                    existing.lastVisit = label;
+                }
+            } else if (!existing._nextVisitAt || when < existing._nextVisitAt) {
+                existing._nextVisitAt = when;
+                existing.nextVisit = label;
+            }
+        }
+
+        if (appt.facility && existing.specialty === "Care provider") {
+            existing.specialty = appt.facility;
+        }
+
+        byPhysician.set(key, existing);
+    }
+
+    return Array.from(byPhysician.values()).sort((a, b) => {
+        const aTime = a._lastVisitAt?.getTime() || 0;
+        const bTime = b._lastVisitAt?.getTime() || 0;
+        return bTime - aTime;
+    });
+}
 
 const typeConfig = {
     "in-person":  { label: "In-Person",  icon: <Stethoscope size={13} />, className: "ap-type-inperson" },
@@ -118,7 +140,10 @@ function AppointmentCard({ appt, expandedId, setExpandedId }) {
                         <Clock size={13} /> {new Date(appt.appointment_date).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })}
                     </span>
                     <span className="ap-detail">
-                        <User size={13} /> Physician ID: {appt.physician_health_id}
+                        <User size={13} />{" "}
+                        {appt.physician_name
+                            ? `${appt.physician_name} · ${appt.physician_health_id}`
+                            : `Physician ID: ${appt.physician_health_id}`}
                     </span>
                     {appt.facility && (
                         <span className="ap-detail">
@@ -178,6 +203,7 @@ function Appointments({ appointments }) {
     const upcoming = appointments.filter(a => a.status !== "completed");
     const past = appointments.filter(a => a.status === "completed");
     const displayed = activeTab === "upcoming" ? upcoming : past;
+    const careTeam = buildCareTeam(appointments);
 
     return (
         <div className="ap-wrap">
@@ -204,8 +230,7 @@ function Appointments({ appointments }) {
                         <Calendar size={18} className="ap-stat-icon ap-stat-icon-blue" />
                         <span className="ap-stat-label">Upcoming</span>
                     </div>
-                    {/* TODO: Replace with real count */}
-                    <span className="ap-stat-value">{appointments.filter(a => a.status !== "completed").length}</span>
+                    <span className="ap-stat-value">{upcoming.length}</span>
                     <span className="ap-stat-sub">Next 6 weeks</span>
                 </div>
                 <div className="ap-stat-card">
@@ -213,9 +238,8 @@ function Appointments({ appointments }) {
                         <CheckCircle size={18} className="ap-stat-icon ap-stat-icon-green" />
                         <span className="ap-stat-label">Completed</span>
                     </div>
-                    {/* TODO: Replace with real count */}
-                    <span className="ap-stat-value">{appointments.filter(a => a.status === "completed").length}</span>
-                    <span className="ap-stat-sub">Last 6 months</span>
+                    <span className="ap-stat-value">{past.length}</span>
+                    <span className="ap-stat-sub">Past visits</span>
                 </div>
                 <div className="ap-stat-card">
                     <div className="ap-stat-top">
@@ -231,8 +255,7 @@ function Appointments({ appointments }) {
                         <Users size={18} className="ap-stat-icon ap-stat-icon-orange" />
                         <span className="ap-stat-label">Providers</span>
                     </div>
-                    {/* TODO: Replace with real count */}
-                    <span className="ap-stat-value">6</span>
+                    <span className="ap-stat-value">{careTeam.length}</span>
                     <span className="ap-stat-sub">Active care team</span>
                 </div>
             </div>
@@ -353,8 +376,10 @@ function Appointments({ appointments }) {
                         <User size={16} className="ap-section-icon" />
                         <h2 className="ap-section-title">Your Care Team</h2>
                     </div>
-                    {/* TODO: Replace with real care team data */}
                     <div className="ap-careteam-list">
+                        {careTeam.length === 0 && (
+                            <p className="ap-doctor-specialty">No providers found yet.</p>
+                        )}
                         {careTeam.map((doc) => (
                             <div key={doc.id} className="ap-doctor-card">
                                 <div className={`ap-doctor-avatar ap-avatar-${doc.color}`}>
@@ -367,14 +392,18 @@ function Appointments({ appointments }) {
                                     </div>
                                     <span className="ap-doctor-specialty">{doc.specialty}</span>
                                     <span className="ap-doctor-visits">
-                                        {doc.lastVisit && `Last visit: ${doc.lastVisit} · `}
+                                        {doc.lastVisit && `Last visit: ${doc.lastVisit}`}
+                                        {doc.lastVisit && doc.nextVisit && " · "}
                                         {doc.nextVisit && `Next: ${doc.nextVisit}`}
+                                        {!doc.lastVisit && !doc.nextVisit && "No visit dates on file"}
                                     </span>
                                 </div>
                             </div>
                         ))}
                     </div>
-                    <button className="ap-viewall-btn">View All Providers (6)</button>
+                    <button className="ap-viewall-btn">
+                        View All Providers ({careTeam.length})
+                    </button>
                     <div className="ap-careteam-ai">
                         <Sparkles size={13} />
                         <span>AI ensures all your providers have access to shared records via the HealthUnity ID system. Care coordination score: 94/100.</span>
